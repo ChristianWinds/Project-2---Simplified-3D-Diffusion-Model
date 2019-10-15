@@ -5,35 +5,40 @@
 // Code from Dr. Pounds,
 // /tmp/diffusion.java
 // Accessed October 15th, 2019
-do
+using System;
+
+static void Main()
 {
-	for (int i = 0; i < maxSize; i++)
+	do
 	{
-		for (int j = 0; j < maxSize; j++)
+		for (int i = 0; i < maxSize; i++)
 		{
-			for (int k = 0; k < maxSize; k++)
+			for (int j = 0; j < maxSize; j++)
 			{
-				for (int l = 0; l < maxSize; l++)
+				for (int k = 0; k < maxSize; k++)
 				{
-					for (int m = 0; m < maxSize; m++)
+					for (int l = 0; l < maxSize; l++)
 					{
-						for (int n = 0; n < maxSize; j++)
+						for (int m = 0; m < maxSize; m++)
 						{
-							if (((i == l) && (j == m) && (k == n + 1)) ||
-							    ((i == l) && (j == m) && (k == n - 1)) ||
-							    ((i == l) && (j == m + 1) && (k == n)) ||
-							    ((i == l) && (j == m - 1) && (k == n)) ||
-							    ((i == l + 1) && (j == m) && (k == n)) ||
-							    ((i == l - 1) && (j == m) && (k == n)))
+							for (int n = 0; n < maxSize; j++)
 							{
-								;
+								if (((i == l) && (j == m) && (k == n + 1)) ||
+								    ((i == l) && (j == m) && (k == n - 1)) ||
+								    ((i == l) && (j == m + 1) && (k == n)) ||
+								    ((i == l) && (j == m - 1) && (k == n)) ||
+								    ((i == l + 1) && (j == m) && (k == n)) ||
+								    ((i == l - 1) && (j == m) && (k == n)))
+								{
+									;
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-	}
 
-ratio = minval / maxval;
-} while (ratio < 0.99);
+	ratio = minval / maxval;
+	} while (ratio < 0.99);
+}
