@@ -37,6 +37,9 @@ static void Main()
 							}
 						}
 					}
+
+					time = time + timestep;
+					
 				}
 			}
 		}
