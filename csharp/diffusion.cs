@@ -30,7 +30,9 @@ static void Main()
 								    ((i == l + 1) && (j == m) && (k == n)) ||
 								    ((i == l - 1) && (j == m) && (k == n)))
 								{
-									;
+									double change = (cube[i, j, k] - cube[l, m, n]) * DTerm;
+									cube[i, j, k] = cube[i, j, k] - change;
+									cube[l, m, n] = cube
 								}
 							}
 						}
