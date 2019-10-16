@@ -100,6 +100,6 @@ class diffusion
 		ratio = minVal / maxVal;
 		} while (ratio < 0.99);
 
-		"Box equilibrated in " time " seconds of simulated time.";
+		Console.WriteLine($"Box equilibrated in {time} seconds of simulated time.");
 	}
 }
