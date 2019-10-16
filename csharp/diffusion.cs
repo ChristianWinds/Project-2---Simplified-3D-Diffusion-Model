@@ -77,7 +77,7 @@ class diffusion
 					
 						// Check for mass consistency.
 						double sumVal = 0.0;
-						double[, ,] maxVal = cube[0, 0, 0];
+						double maxVal = cube[0, 0, 0];
 						double minVal = cube[0, 0, 0];
 
 						for (int p = 0; p < maxSize; p++)
