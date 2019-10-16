@@ -9,6 +9,29 @@ using System;
 
 static void Main()
 {
+	readonly int maxSize = 10;
+	double[, ,] cube = new double[maxSize, maxSize, maxSize];
+
+	// Zero the cube
+	for (int i = 0; i < maxSize; i++)
+	{
+		for (int j = 0; j < maxSize; j++)
+		{
+			for (int k = 0; k < maxSize; k++)
+			{
+				cube[i, j, k] = 0.0;
+			}
+		}
+	}
+
+	double diffusionCoefficient = 0.175;
+	double roomDimension = 5;
+	double speedOfGasMolecules = 250.0;
+	double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
+	double distanceBetweenBlocks =  roomDimension / maxSize;
+
+	double DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
+
 	do
 	{
 		for (int i = 0; i < maxSize; i++)
