@@ -80,11 +80,26 @@ class diffusion
 						double[, ,] maxVal = new cube[0, 0, 0];
 						double minVal = cube[0, 0, 0];
 
+						for (int i = 0; i < maxSize; i++)
+						{
+							for (int j = 0; j < maxSize; j++)
+							{
+								for (int k = 0; k < maxSize; k++)
+								{
+									maxVal =;
+									minVal =;
+									sumVal +=;
+							
+								}
+							}
+						}
 					}
 				}
 			}
 
-		ratio = minval / maxval;
+		ratio = minVal / maxVal;
 		} while (ratio < 0.99);
+
+		"Box equilibrated in " time " seconds of simulated time.";
 	}
 }
