@@ -9,9 +9,9 @@ using System;
 
 class diffusion
 {
-	static void Main()
+	static void Main(string[] args)
 	{
-		readonly int maxSize = 10;
+		int maxSize = 10;
 		double[, ,] cube = new double[maxSize, maxSize, maxSize];
 
 		// Zero the cube.
