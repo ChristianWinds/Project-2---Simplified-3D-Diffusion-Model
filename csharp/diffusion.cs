@@ -80,11 +80,11 @@ class diffusion
 						double[, ,] maxVal = new cube[0, 0, 0];
 						double minVal = cube[0, 0, 0];
 
-						for (int i = 0; i < maxSize; i++)
+						for (int p = 0; p < maxSize; p++)
 						{
-							for (int j = 0; j < maxSize; j++)
+							for (int q = 0; q < maxSize; q++)
 							{
-								for (int k = 0; k < maxSize; k++)
+								for (int r = 0; r < maxSize; r++)
 								{
 									maxVal =;
 									minVal =;
