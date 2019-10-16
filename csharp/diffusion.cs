@@ -30,9 +30,9 @@ class diffusion
 		double roomDimension = 5;
 		double speedOfGasMolecules = 250.0;
 		double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
-		double distanceBetweenBlocks =  roomDimension / maxSize;
+		double distanceBetweenBlocks = roomDimension / maxSize;
 
-		double DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
+		double DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks);
 
 		// Initialize the first cell.
 		cube[0, 0, 0] = 1.0e21;
