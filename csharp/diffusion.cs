@@ -12,7 +12,7 @@ static void Main()
 	readonly int maxSize = 10;
 	double[, ,] cube = new double[maxSize, maxSize, maxSize];
 
-	// Zero the cube
+	// Zero the cube.
 	for (int i = 0; i < maxSize; i++)
 	{
 		for (int j = 0; j < maxSize; j++)
@@ -31,6 +31,16 @@ static void Main()
 	double distanceBetweenBlocks =  roomDimension / maxSize;
 
 	double DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
+
+	// Initialize the first cell.
+	cube[0, 0, 0] = 1.0e21;
+
+	int pass = 0;
+
+	// Create a double variable to track increasing system time.
+	double time = 0.0;
+
+	double ratio = 0.0;
 
 	do
 	{
@@ -63,9 +73,11 @@ static void Main()
 
 					time = time + timestep;
 					
-					// Check for mass efficiency.
-					double sumval = 0.0;
-					double[, ,] maxval = new cube[];
+					// Check for mass consistency.
+					double sumVal = 0.0;
+					double[, ,] maxVal = new cube[0, 0, 0];
+					double minVal = cube[0, 0, 0];
+
 				}
 			}
 		}
