@@ -86,10 +86,9 @@ class diffusion
 							{
 								for (int r = 0; r < maxSize; r++)
 								{
-									maxVal =;
-									minVal =;
-									sumVal +=;
-							
+									maxVal =Math.Max(cube[p, q, r], maxVal);
+									minVal =Math.Min(cube[p, q, r], minVal);
+									sumVal += cube[p, q, r];
 								}
 							}
 						}
