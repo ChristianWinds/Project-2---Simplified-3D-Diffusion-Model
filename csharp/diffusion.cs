@@ -56,7 +56,7 @@ class diffusion
 						{
 							for (int m = 0; m < maxSize; m++)
 							{
-								for (int n = 0; n < maxSize; j++)
+								for (int n = 0; n < maxSize; n++)
 								{
 									if (((i == l) && (j == m) && (k == n + 1)) ||
 									    ((i == l) && (j == m) && (k == n - 1)) ||
