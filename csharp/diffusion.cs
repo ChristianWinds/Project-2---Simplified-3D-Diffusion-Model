@@ -40,6 +40,9 @@ static void Main()
 
 					time = time + timestep;
 					
+					// Check for mass efficiency.
+					double sumval = 0.0;
+					double[, ,] maxval = new cube[];
 				}
 			}
 		}
