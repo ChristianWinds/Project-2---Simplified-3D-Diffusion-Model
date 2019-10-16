@@ -72,32 +72,34 @@ class diffusion
 								}
 							}
 						}
-
-						time = time + timestep;
-					
-						// Check for mass consistency.
-						double sumVal = 0.0;
-						double maxVal = cube[0, 0, 0];
-						double minVal = cube[0, 0, 0];
-
-						for (int p = 0; p < maxSize; p++)
-						{
-							for (int q = 0; q < maxSize; q++)
-							{
-								for (int r = 0; r < maxSize; r++)
-								{
-									maxVal =Math.Max(cube[p, q, r], maxVal);
-									minVal =Math.Min(cube[p, q, r], minVal);
-									sumVal += cube[p, q, r];
-								}
-							}
-						}
-
-						ratio = minVal / maxVal;
-					} while (ratio < 0.99);
-
-					Console.WriteLine($"Box equilibrated in {time} seconds of simulated time.");
+					}
 				}
 			}
-		}
+
+			time = time + timestep;
+					
+			// Check for mass consistency.
+			double sumVal = 0.0;
+			double maxVal = cube[0, 0, 0];
+			double minVal = cube[0, 0, 0];
+
+			for (int p = 0; p < maxSize; p++)
+			{
+				for (int q = 0; q < maxSize; q++)
+				{
+					for (int r = 0; r < maxSize; r++)
+					{
+						maxVal = Math.Max(cube[p, q, r], maxVal);
+						minVal = Math.Min(cube[p, q, r], minVal);
+						sumVal += cube[p, q, r];
+					}
+				}
+			}
+
+			ratio = minVal / maxVal;
+			Console.WriteLine($"{time} {ratio} {sumVal}");
+		} while (ratio < 0.99);
+
+		Console.WriteLine($"Box equilibrated in {time} seconds of simulated time.");
+	}
 }
