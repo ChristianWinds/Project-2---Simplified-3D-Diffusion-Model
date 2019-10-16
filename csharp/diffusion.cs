@@ -92,13 +92,13 @@ class diffusion
 								}
 							}
 						}
-					}
+
+						ratio = minVal / maxVal;
+					} while (ratio < 0.99);
+
+					Console.WriteLine($"Box equilibrated in {time} seconds of simulated time.");
 				}
 			}
-
-		ratio = minVal / maxVal;
-		} while (ratio < 0.99);
-
-		Console.WriteLine($"Box equilibrated in {time} seconds of simulated time.");
+		}
 	}
 }
