@@ -27,8 +27,16 @@ class diffusion
 		}
 
 		double diffusionCoefficient = 0.175;
+
+		// Create a variable for room dimension to represent 5 meters.
 		double roomDimension = 5;
+
+		// Set a gas molecule speed variable to represent gas molecules'
+		// speed at room temperature.
 		double speedOfGasMolecules = 250.0;
+
+		// Create a timestep variable to represent the value of h in
+		// seconds.
 		double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
 		double distanceBetweenBlocks = roomDimension / maxSize;
 
