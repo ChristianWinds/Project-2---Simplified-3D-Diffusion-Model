@@ -8,7 +8,7 @@
 
 program diffusion
 implicit none
-integer :: maxSize
+integer :: maxSize, pass
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,
 distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxVal, minVal
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
@@ -38,6 +38,13 @@ timestep = (roomDimension / speedOfGasMolecules) / maxSize;
 distanceBetweenBlocks = roomDimension / maxSize;
 
 DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks);
+
+! Initialize the first cell
+cube = 1.0e21
+
+pass = 0
+time = 0.0
+ratio = 0.0
 
 print *, time, ' ', ratio, ' ', sumVal
 print *, 'Box equilibrated in ', time, ' seconds of simulated time.'
