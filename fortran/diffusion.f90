@@ -7,9 +7,9 @@ implicit none
 integer :: maxSize
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,
 distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxVal, minVal
+real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 
-maxSize 10
-cube maxSize maxSize maxSize
+maxSize = 10
 
 ! Zero the cube
 print *, time, ' ', ratio, ' ', sumVal
