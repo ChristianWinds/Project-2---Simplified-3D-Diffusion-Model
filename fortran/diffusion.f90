@@ -81,11 +81,11 @@ do while (ratio < 0.99)
 
     ! Check for mass consistency
     sumVal = 0.0
-    maxValue = cube(0, 0, 0)
-    minValue = cube(0, 0, 0)
-    do i = 0, maxSize, 1
-        do j = 0, maxSize, 1
-            do k = 0, maxSize, 1
+    maxValue = cube(1, 1, 1)
+    minValue = cube(1, 1, 1)
+    do i = 1, maxSize, 1
+        do j = 1, maxSize, 1
+            do k = 1, maxSize, 1
                 maxValue = maxval(cube)
                 minValue = minval(cube)
                 sumVal = sumVal + cube(i, j, k)
