@@ -8,7 +8,7 @@
 
 program diffusion
 implicit none
-integer :: maxSize = 10
+integer, parameter :: maxSize = 10
 integer :: pass
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep, distanceBetweenBlocks, dTerm, time, ratio, change,&
 &sumVal, maxVal, minVal
