@@ -9,8 +9,7 @@
 program diffusion
 implicit none
 integer :: maxSize, pass
-real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,
-distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxVal, minVal
+real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep, distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxVal, minVal
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 
 maxSize = 10
@@ -19,25 +18,25 @@ maxSize = 10
 do  i = 0, maxSize
         do j = 0, maxSize
                 do k = 0, maxSize
-                        cube = 0.0
+                        cube (i:j:k) = 0.0
                 end do
         end do
 end do
 
-diffusionCoefficient = 0.175;
+diffusionCoefficient = 0.175
 
 ! Create a variable for room dimension to represent 5 meters
-roomDimension = 5;
+roomDimension = 5
 
 ! Set a gas molecule speed variable to represent gas molecules' speed at room
 ! temperature
-speedOfGasMolecules = 250.0;
+speedOfGasMolecules = 250.0
 
 ! Create a timestep variable to represent the value of h in seconds
-timestep = (roomDimension / speedOfGasMolecules) / maxSize;
-distanceBetweenBlocks = roomDimension / maxSize;
+timestep = (roomDimension / speedOfGasMolecules) / maxSize
+distanceBetweenBlocks = roomDimension / maxSize
 
-DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks);
+DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
 
 ! Initialize the first cell
 cube = 1.0e21
