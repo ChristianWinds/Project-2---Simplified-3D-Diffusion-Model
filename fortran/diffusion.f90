@@ -60,7 +60,7 @@ do while (ratio < 0.99)
                                                         &((i == l) .and. (j&
 &== m + 1) .and. (k == n)) .or.&
                                                         &((i == l) .and. (j&
-== m - 1) .and. (k == n)) .or.&
+&== m - 1) .and. (k == n)) .or.&
                                                         &((i == l + 1) .and.&
 &(j == m) .and. (k == n)) .or.&
                                                         &((i == l - 1) .and.&
