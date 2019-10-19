@@ -77,6 +77,23 @@ do while (ratio < 0.99)
             end do
         end do
     end do
+    time = time + timestep
+
+    ! Check for mass consistency
+    sumVal = 0.0
+    maxValue = cube(0, 0, 0)
+    minValue = cube(0, 0, 0)
+    do i = 0, maxSize, 1
+        do j = 0, maxSize, 1
+            do k = 0, maxSize, 1
+                maxValue = maxval(cube)
+                minValue = minval(cube)
+                sumVal = sumVal + cube(i, j, k)
+            end do
+        end do
+    end do
+    ratio = minValue / maxValue
+
     print *, time, ' ', ratio, ' ', sumVal
 end do
 
