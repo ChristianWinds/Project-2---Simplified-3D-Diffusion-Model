@@ -15,9 +15,9 @@ real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep, dist
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 
 ! Zero the cube
-do  i = 0, maxSize
-        do j = 0, maxSize
-                do k = 0, maxSize
+do  i = 1, maxSize
+        do j = 1, maxSize
+                do k = 1, maxSize
                         cube(i, j, k) = 0.0
                 end do
         end do
