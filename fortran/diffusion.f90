@@ -77,8 +77,8 @@ do while (ratio < 0.99)
             end do
         end do
     end do
+    print *, time, ' ', ratio, ' ', sumVal
 end do
 
-print *, time, ' ', ratio, ' ', sumVal
 print *, 'Box equilibrated in ', time, ' seconds of simulated time.'
 end program diffusion
