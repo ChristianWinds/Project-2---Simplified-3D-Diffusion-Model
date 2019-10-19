@@ -53,10 +53,24 @@ do while (ratio < 0.99)
                                         do m = 0, maxSize, 1
                                                 do n = 0, maxSize, 1
                                                         if (((i == l) .and. (j
-                                                             == m) .and. (k == n + 1)) .or.
-                                                            ((i == l) .and. (j == m) .and. (k == n - 1)) .or.
+== m) .and. (k == n + 1)) .or.
                                                             ((i == l) .and. (j
-== m + 1
+== m) .and. (k == n - 1)) .or.
+                                                            ((i == l) .and. (j
+== m + 1) .and. (k == n)) .or.
+                                                            ((i == l) .and. (j
+== m - 1) .and. (k == n)) .or.
+                                                            ((i == l + 1) .and.
+(j == m) .and. (k == n)) .or.
+                                                            ((i == l - 1) .and.
+(j == m) .and. (k == n)))
+                                                                change =
+(cube(i:j:k) - cube(l:m:n)) * DTerm
+                                                                cube(i:j:k) =
+cube(i:j:k) - change
+                                                                cube(l:m:n) =
+cube(l:m:n) + change
+                                                        end if
                                                 end do
                                         end do
                                 end do
