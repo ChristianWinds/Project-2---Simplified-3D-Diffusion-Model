@@ -18,7 +18,7 @@ real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 do  i = 0, maxSize
         do j = 0, maxSize
                 do k = 0, maxSize
-                        cube (i:j:k) = 0.0
+                        cube(i:j:k) = 0.0
                 end do
         end do
 end do
