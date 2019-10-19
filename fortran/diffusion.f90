@@ -48,13 +48,12 @@ ratio = 0.0
 
 do while (ratio < 0.99)
     do i = 0, maxSize, 1
-            do j = 0, maxSize, 1
-                    do k = 0, maxSize, 1
-                            do l = 0, maxSize, 1
-                                    do m = 0, maxSize, 1
-                                            do n = 0, maxSize, 1
-                                                    if (((i == l) .and. (j&
-&== m) .and. (k == n + 1)) .or.&
+        do j = 0, maxSize, 1
+            do k = 0, maxSize, 1
+                do l = 0, maxSize, 1
+                    do m = 0, maxSize, 1
+                        do n = 0, maxSize, 1
+                            if (((i == l) .and. (j == m) .and. (k == n + 1)) .or.&
 &((i == l) .and. (j&
 &== m) .and. (k == n - 1)) .or.&
                                                         &((i == l) .and. (j&
@@ -71,12 +70,12 @@ do while (ratio < 0.99)
 &cube(i:j:k) - change
                                                             cube(l:m:n) =&
 &cube(l:m:n) + change
-                                                    end if
-                                            end do
-                                    end do
-                            end do
+                            end if
+                        end do
                     end do
+                end do
             end do
+        end do
     end do
 end do
 
