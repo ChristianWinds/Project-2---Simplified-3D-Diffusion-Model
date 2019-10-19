@@ -52,8 +52,8 @@ do while (ratio < 0.99)
                                 do l = 0, maxSize, 1
                                         do m = 0, maxSize, 1
                                                 do n = 0, maxSize, 1
-                                                        if (((i == l) .and. (j
-== m) .and. (k == n + 1)) .or.
+                                                        if (((i == l) .and. (j&
+&== m) .and. (k == n + 1)) .or.
                                                             ((i == l) .and. (j
 == m) .and. (k == n - 1)) .or.
                                                             ((i == l) .and. (j
