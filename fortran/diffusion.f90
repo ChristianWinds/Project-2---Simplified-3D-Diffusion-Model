@@ -40,7 +40,7 @@ DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks *&
 &distanceBetweenBlocks)
 
 ! Initialize the first cell
-cube (0:0:0) = 1.0e21
+cube(0:0:0) = 1.0e21
 
 passes = 0
 time = 0.0
