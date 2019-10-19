@@ -5,6 +5,10 @@
 // Code from Dr. Pounds,
 // /tmp/diffusion.java
 // Accessed October 15th, 2019
+//
+
+// Checked for mass consistency by Dr. Pounds on 10/19/19
+
 using System;
 
 class diffusion
