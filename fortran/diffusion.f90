@@ -9,7 +9,8 @@
 program diffusion
 implicit none
 integer :: maxSize, pass
-real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep, distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxVal, minVal
+real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep, distanceBetweenBlocks, dTerm, time, ratio, change,&
+&sumVal, maxVal, minVal
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 
 maxSize = 10
