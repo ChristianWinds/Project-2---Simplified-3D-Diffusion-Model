@@ -63,7 +63,7 @@ do while (ratio < 0.99)
 == m - 1) .and. (k == n)) .or.&
                                                         &((i == l + 1) .and.&
 &(j == m) .and. (k == n)) .or.&
-                                                        &((i == l - 1) .and.
+                                                        &((i == l - 1) .and.&
 &(j == m) .and. (k == n)))
                                                             change =&
 &(cube(i:j:k) - cube(l:m:n)) * DTerm
