@@ -40,7 +40,7 @@ DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks *&
 &distanceBetweenBlocks)
 
 ! Initialize the first cell
-cube(0:0:0) = 1.0e21
+cube(0, 0, 0) = 1.0e21
 
 passes = 0
 time = 0.0
@@ -65,11 +65,11 @@ do while (ratio < 0.99)
                                                         &((i == l - 1) .and.&
 &(j == m) .and. (k == n))) then
                                                             change =&
-&(cube(i:j:k) - cube(l:m:n)) * DTerm
-                                                            cube(i:j:k) =&
-&cube(i:j:k) - change
-                                                            cube(l:m:n) =&
-&cube(l:m:n) + change
+&(cube(i, j, k) - cube(l, m, n)) * DTerm
+                                                            cube(i, j, k) =&
+&cube(i, j, k) - change
+                                                            cube(l, m, n) =&
+&cube(l, m, n) + change
                             end if
                         end do
                     end do
