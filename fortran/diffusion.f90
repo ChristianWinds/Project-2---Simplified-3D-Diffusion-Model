@@ -11,7 +11,7 @@ implicit none
 integer, parameter :: maxSize = 10
 integer :: passes
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep, distanceBetweenBlocks, dTerm, time, ratio, change,&
-&sumVal, maxVal, minVal
+&sumVal, maxValue, minValue
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 
 ! Zero the cube
