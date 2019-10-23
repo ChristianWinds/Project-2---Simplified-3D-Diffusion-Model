@@ -28,21 +28,23 @@ int main()
 	// Create a variable for room dimension to represent 5 meters.
 	double roomDimension = 5;
 
-	// Set a gas molecule speed variable to represent gas molecules'
-	// speed at room temperature.
+	// Set a gas molecule speed variable to represent 100 g/mol gas
+	// molecules' speed at room temperature.
 	double speedOfGasMolecules = 250.0;
 
-	// Create a timestep variable to represent the value of h in
-	// seconds.
+	// Create a timestep variable to represent the value of h in seconds.
 	double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
 	double distanceBetweenBlocks = roomDimension / maxSize;
 
-	double DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks);
+	double DTerm = diffusionCoefficient * timestep /
+		       (distanceBetweenBlocks * distanceBetweenBlocks);
 
 	// Initialize the first cell
 	cube[0][0][0] = 1.0e21;
 
 	int pass = 0;
+
+	// Create a double variable to track increasing system time.
 	double time = 0.0;
 
 	double ratio = 0.0;
@@ -95,8 +97,8 @@ int main()
 			{
 				for (k = 0; k < maxSize; k++)
 				{
-					maxVal = cube;
-					minVal = cube;
+					maxVal = max(cube[i][j][k], maxVal);
+					minVal = min(cube[i][j][k], minVal);
 					sumVal += cube[i][j][k];
 				}
 			}
@@ -111,4 +113,48 @@ int main()
 	printf("Box equilibrated in %lf seconds of simulated time.", time);
 
 	return 0;
+}
+
+/* Code from Tutorialspoint,
+ * https://www.tutorialspoint.com/cprogramming/c_functions.htm
+ * Accessed Wednesday, October 23rd, 2019 */
+double max(double num1, double num2)
+{
+	// Precondition: Two valid numeric double values were sent to this
+	// function
+	// Postcondition: The higher of the two values sent to this function was
+	// returned to this function's caller as a double value
+
+	double higherValue;
+
+	// Compare the two parameter values to determine the higher of the two
+	// values
+	if (num1 > num2)
+		higherValue = num1;
+	else
+		higherValue = num2;
+ 
+	return higherValue; 
+}
+
+/* Code from Tutorialspoint,
+ * https://www.tutorialspoint.com/cprogramming/c_functions.htm
+ * Accessed Wednesday, October 23rd, 2019 */
+double min(double num1, double num2)
+{
+	// Precondition: Two valid numeric double values were sent to this
+	// function
+	// Postcondition: The lower of the two values sent to this function was
+	// returned to this function's caller as a double value
+
+	double lowerValue;
+
+	// Compare the two parameter values to determine the higher of the two
+	// values
+	if (num1 < num2)
+		lowerValue = num1;
+	else
+		lowerValue = num2;
+ 
+	return lowerValue; 
 }
