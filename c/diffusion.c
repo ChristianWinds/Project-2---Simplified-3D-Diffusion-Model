@@ -4,5 +4,9 @@
 #include <stdio.h>
 int main()
 {
+	const int maxSize = 10;
+
+	double diffusionCoefficient = 0.175;
+
 	return 0;
 }
