@@ -5,6 +5,7 @@
 int main()
 {
 	const int maxSize = 10;
+	double cube[maxSize][maxSize][maxSize];
 
 	double diffusionCoefficient = 0.175;
 
