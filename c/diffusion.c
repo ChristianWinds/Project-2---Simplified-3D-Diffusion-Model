@@ -70,6 +70,26 @@ int main()
 
 		time = time + timestep;
 
+		// Check for mass consistency
+		double sumVal = 0.0;
+		double maxVal = cube[0][0][0];
+		double minVal = cube[0][0][0];
+		for (i = 0; i < maxSize; i++)
+		{
+			for (j = 0; j < maxSize; j++)
+			{
+				for (k = 0; k < maxSize; k++)
+				{
+					maxVal = cube;
+					minVal = cube;
+					sumVal += cube[i][j][k];
+				}
+			}
+		}
 
-		return 0;
-	}
+		ratio = minVal / maxVal;
+
+		
+
+	return 0;
+}
