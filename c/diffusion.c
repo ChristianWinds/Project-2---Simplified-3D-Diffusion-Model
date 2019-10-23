@@ -25,5 +25,8 @@ int main()
 
 	double diffusionCoefficient = 0.175;
 
+	// Initialize the first cell
+	cube[0][0][0] = 1.0e21;
+
 	return 0;
 }
