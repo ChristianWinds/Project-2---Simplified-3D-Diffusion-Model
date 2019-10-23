@@ -7,6 +7,22 @@ int main()
 	const int maxSize = 10;
 	double cube[maxSize][maxSize][maxSize];
 
+	int i = 0;
+	int j = 0;
+	int k = 0;
+
+	// Zero the cube
+	for (i = 0; i < maxSize; i++)
+	{
+		for (i = 0; i < maxSize; i++)
+		{
+			for (i = 0; i < maxSize; i++)
+			{
+				cube[i][j][k] = 0.0;
+			}
+		}
+	}
+
 	double diffusionCoefficient = 0.175;
 
 	return 0;
