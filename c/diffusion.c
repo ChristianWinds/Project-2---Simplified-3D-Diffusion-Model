@@ -89,7 +89,11 @@ int main()
 
 		ratio = minVal / maxVal;
 
-		
+		printf("%lf %lf %lf", time, ratio, sumVal);
+
+	} while (ratio < 0.99);
+
+	printf("Box equilibrated in %lf seconds of simulated time.", time);
 
 	return 0;
 }
