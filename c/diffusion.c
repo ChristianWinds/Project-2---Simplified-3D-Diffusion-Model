@@ -24,10 +24,24 @@ int main()
 	}
 
 	double diffusionCoefficient = 0.175;
+                // Create a variable for room dimension to represent 5 meters.
+                double roomDimension = 5;
+
+                // Set a gas molecule speed variable to represent gas molecules'
+                // speed at room temperature.
+                double speedOfGasMolecules = 250.0;
+
+                // Create a timestep variable to represent the value of h in
+                // seconds.
+                double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
+                double distanceBetweenBlocks = roomDimension / maxSize;
+
+                double DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks);
 
 	// Initialize the first cell
 	cube[0][0][0] = 1.0e21;
 
+	int pass = 0;
 	double time = 0.0;
 
 	double ratio = 0.0;
