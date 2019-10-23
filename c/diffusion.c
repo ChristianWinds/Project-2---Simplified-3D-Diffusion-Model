@@ -149,7 +149,7 @@ double min(double num1, double num2)
 
 	double lowerValue;
 
-	// Compare the two parameter values to determine the higher of the two
+	// Compare the two parameter values to determine the lower of the two
 	// values
 	if (num1 < num2)
 		lowerValue = num1;
