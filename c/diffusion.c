@@ -25,14 +25,14 @@ int main()
 
 	double diffusionCoefficient = 0.175;
 
-	// Create a variable for room dimension to represent 5 meters.
+	// Create a variable for room dimension to represent 5 meters
 	double roomDimension = 5;
 
 	// Set a gas molecule speed variable to represent 100 g/mol gas
-	// molecules' speed at room temperature.
+	// molecules' speed at room temperature
 	double speedOfGasMolecules = 250.0;
 
-	// Create a timestep variable to represent the value of h in seconds.
+	// Create a timestep variable to represent the value of h in seconds
 	double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
 	double distanceBetweenBlocks = roomDimension / maxSize;
 
@@ -44,7 +44,7 @@ int main()
 
 	int pass = 0;
 
-	// Create a double variable to track increasing system time.
+	// Create a double variable to track increasing system time
 	double time = 0.0;
 
 	double ratio = 0.0;
@@ -74,8 +74,8 @@ int main()
 								    ((i == l + 1) && (j == m) && (k == n)) ||
 								    ((i == l - 1) && (j == m) && (k == n)))
 								{
-									double change = (cube[i, j, k] - cube[l, m, n]) * DTerm;
-									cube[i, j, k] = cube[i, j, k] - change;
+									double change = (cube[i][j][k] - cube[l][m][n]) * DTerm;
+									cube[i, j, k] = cube[i][j][k] - change;
 									cube[l, m, n] = cube[l, m, n] + change;
 								}
 							}
