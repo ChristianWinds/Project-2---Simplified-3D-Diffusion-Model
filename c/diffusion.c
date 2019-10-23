@@ -32,6 +32,10 @@ int main()
 
 	double ratio = 0.0;
 
+	int l = 0;
+	int m = 0;
+	int n = 0;
+
 	do
 	{
 		for (i = 0; i < maxSize; i++)
@@ -47,11 +51,11 @@ int main()
 							for (n = 0; n < maxSize; n++)
 							{
 								if (((i == l) && (j == m) && (k == n + 1)) ||
-										((i == l) && (j == m) && (k == n - 1)) ||
-										((i == l) && (j == m + 1) && (k == n)) ||
-										((i == l) && (j == m - 1) && (k == n)) ||
-										((i == l + 1) && (j == m) && (k == n)) ||
-										((i == l - 1) && (j == m) && (k == n)))
+								    ((i == l) && (j == m) && (k == n - 1)) ||
+								    ((i == l) && (j == m + 1) && (k == n)) ||
+								    ((i == l) && (j == m - 1) && (k == n)) ||
+								    ((i == l + 1) && (j == m) && (k == n)) ||
+								    ((i == l - 1) && (j == m) && (k == n)))
 								{
 									double change = (cube[i, j, k] - cube[l, m, n]) * DTerm;
 									cube[i, j, k] = cube[i, j, k] - change;
