@@ -65,7 +65,7 @@ int main()
 			{
 				cube[i][j][k] = 0.0;
 				/* Test code */
-				printf("Cube being zeroed; cube[%d][%d][%d] == %lf", i, j, k, cube[i][j][k]);
+				printf("TEST: Cube being zeroed; cube[%d][%d][%d] == %lf\n", i, j, k, cube[i][j][k]);
 			}
 		}
 	}
