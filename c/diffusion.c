@@ -64,8 +64,6 @@ int main()
 			for (k = 0; k < maxSize; k++)
 			{
 				cube[i][j][k] = 0.0;
-				/* Test code */
-				printf("TEST: Cube being zeroed; cube[%d][%d][%d] == %lf\n", i, j, k, cube[i][j][k]);
 			}
 		}
 	}
