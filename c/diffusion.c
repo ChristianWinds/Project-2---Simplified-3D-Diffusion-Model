@@ -2,6 +2,51 @@
  * Course: CSC 330 Organization of Programming Languages
  * School Year: 2019-2020 School Year */
 #include <stdio.h>
+
+/* Code from Tutorialspoint,
+ * https://www.tutorialspoint.com/cprogramming/c_functions.htm
+ * Accessed Wednesday, October 23rd, 2019 */
+double max(double num1, double num2)
+{
+	// Precondition: Two valid numeric double values were sent to this
+	// function
+	// Postcondition: The higher of the two values sent to this function was
+	// returned to this function's caller as a double value
+
+	double higherValue;
+
+	// Compare the two parameter values to determine the higher of the two
+	// values
+	if (num1 > num2)
+		higherValue = num1;
+	else
+		higherValue = num2;
+ 
+	return higherValue; 
+}
+
+/* Code from Tutorialspoint,
+ * https://www.tutorialspoint.com/cprogramming/c_functions.htm
+ * Accessed Wednesday, October 23rd, 2019 */
+double min(double num1, double num2)
+{
+	// Precondition: Two valid numeric double values were sent to this
+	// function
+	// Postcondition: The lower of the two values sent to this function was
+	// returned to this function's caller as a double value
+
+	double lowerValue;
+
+	// Compare the two parameter values to determine the lower of the two
+	// values
+	if (num1 < num2)
+		lowerValue = num1;
+	else
+		lowerValue = num2;
+ 
+	return lowerValue; 
+}
+
 int main()
 {
 	const int maxSize = 10;
@@ -115,46 +160,3 @@ int main()
 	return 0;
 }
 
-/* Code from Tutorialspoint,
- * https://www.tutorialspoint.com/cprogramming/c_functions.htm
- * Accessed Wednesday, October 23rd, 2019 */
-double max(double num1, double num2)
-{
-	// Precondition: Two valid numeric double values were sent to this
-	// function
-	// Postcondition: The higher of the two values sent to this function was
-	// returned to this function's caller as a double value
-
-	double higherValue;
-
-	// Compare the two parameter values to determine the higher of the two
-	// values
-	if (num1 > num2)
-		higherValue = num1;
-	else
-		higherValue = num2;
- 
-	return higherValue; 
-}
-
-/* Code from Tutorialspoint,
- * https://www.tutorialspoint.com/cprogramming/c_functions.htm
- * Accessed Wednesday, October 23rd, 2019 */
-double min(double num1, double num2)
-{
-	// Precondition: Two valid numeric double values were sent to this
-	// function
-	// Postcondition: The lower of the two values sent to this function was
-	// returned to this function's caller as a double value
-
-	double lowerValue;
-
-	// Compare the two parameter values to determine the lower of the two
-	// values
-	if (num1 < num2)
-		lowerValue = num1;
-	else
-		lowerValue = num2;
- 
-	return lowerValue; 
-}
