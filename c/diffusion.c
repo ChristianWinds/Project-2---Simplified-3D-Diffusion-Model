@@ -59,9 +59,9 @@ int main()
 	// Zero the cube
 	for (i = 0; i < maxSize; i++)
 	{
-		for (i = 0; i < maxSize; i++)
+		for (j = 0; j < maxSize; j++)
 		{
-			for (i = 0; i < maxSize; i++)
+			for (k = 0; k < maxSize; k++)
 			{
 				cube[i][j][k] = 0.0;
 				/* Test code */
