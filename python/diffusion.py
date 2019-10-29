@@ -4,6 +4,12 @@ Course: CSC 330 Organization of Programming Languages
 School Year: 2019-2020 School Year
 """
 
+""" Code citation
+Code from Dr. Pounds,
+/tmp/diffusion.java
+Accessed Tuesday, October 29th, 2019
+"""
+
 maxSize = 10
 
 # Zero the cube
