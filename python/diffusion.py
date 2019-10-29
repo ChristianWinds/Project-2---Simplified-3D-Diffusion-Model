@@ -32,7 +32,22 @@ passes = 0
 # Create a double variable to track increasing system time
 time = 0.0
 
+
+""" Code citation
+Code from javatpoint,
+https://www.javatpoint.com/python-do-while-loop
+Accessed Tuesday, October 29th, 2019
+"""
 ratio = 0.0
+
+# Use a while True loop to simulate the beginning of a do while loop
+while True:
+
+
+	# Use an if statemene and a break instruction to simulate the end of a
+	# do while loop
+	if (ratio >= 0.99)
+		break
 
 # Check for mass consistency
 
