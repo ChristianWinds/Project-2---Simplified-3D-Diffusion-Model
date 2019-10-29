@@ -18,11 +18,11 @@ roomDimension = 5
 speedOfGasMolecules = 250.0
 
 # Create a timestep variable to represent the value of h in seconds
-timestep = (roomDimension / speedOfGasMolecules) / maxSize
+timestep = (roomDimension(float) / speedOfGasMolecules(float)) / maxSize(float)
 
-distanceBetweenBlocks = roomDimension / maxSize
+distanceBetweenBlocks = roomDimension(float) / maxSize(float)
 
-dTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
+dTerm = diffusionCoefficient(float) * timestep(float) / (distanceBetweenBlocks(float) * distanceBetweenBlocks(float))
 
 # Initialize the first cell
 
