@@ -12,6 +12,13 @@ Accessed Tuesday, October 29th, 2019
 
 maxSize = 10
 
+""" Code citation
+Code from GeeksforGeeks,
+https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/
+Accessed Tuesday, October 29th, 2019
+"""
+rows, columns, layers = (maxSize, maxSize, maxSize)
+
 # Zero the cube
 
 diffusionCoefficient = 0.175
