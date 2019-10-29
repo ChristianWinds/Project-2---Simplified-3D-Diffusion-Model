@@ -16,4 +16,15 @@ func main() {
 
 	fmt.Println("  ")
 	fmt.Println("Box equilibrated in  seconds of simulated time.")
+
+	var diffusionCoefficient float64 = 0.175
+	var roomDimension float64 = 5
+	var speedOfGasMolecules float64 = 250.0
+	var timestep float64 = (roomDimension / speedOfGasMolecules) / maxSize
+	var distanceBetweenBlocks float64 = roomDimension / maxSize
+
+	var dTerm float64 = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
+
+	var time float64 = 0.0
+	var ratio float64 = 0.0
 }
