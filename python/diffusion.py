@@ -63,11 +63,11 @@ while True:
 					for m in range (maxSize):
 						for n in range (maxSize):
 							if (((i == l) and (j == m) and (k == n + 1)) or
-							    (((i == l) and (j == m) and (k == n - 1)) or
-							    (((i == l) and (j == m + 1) and (k == n)) or
-							    (((i == l) and (j == m - 1) and (k == n)) or
-							    (((i == l + 1) and (j == m) and (k == n)) or
-							    (((i == l - 1) and (j == m) and (k == n))):
+							    ((i == l) and (j == m) and (k == n - 1)) or
+							    ((i == l) and (j == m + 1) and (k == n)) or
+							    ((i == l) and (j == m - 1) and (k == n)) or
+							    ((i == l + 1) and (j == m) and (k == n)) or
+							    ((i == l - 1) and (j == m) and (k == n))):
 								change = (cube[i][j][k] - cube[l][m][n]) * dTerm
 								cube[i][j][k] = cube[i][j][k] - change
 								cube[l][m][n] = cube[l][m][n] + change
