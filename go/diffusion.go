@@ -14,9 +14,6 @@ func main() {
 	var maxSize uint64 = 10
 	var cube [maxSize][maxSize] float64 
 
-	fmt.Println("  ")
-	fmt.Println("Box equilibrated in  seconds of simulated time.")
-
 	var diffusionCoefficient float64 = 0.175
 	var roomDimension float64 = 5
 	var speedOfGasMolecules float64 = 250.0
@@ -27,4 +24,11 @@ func main() {
 
 	var time float64 = 0.0
 	var ratio float64 = 0.0
+
+	var sumVal float64 = 0.0
+	var maxVal float64
+	var minVal float64
+
+	fmt.Println("  ")
+	fmt.Println("Box equilibrated in  seconds of simulated time.")
 }
