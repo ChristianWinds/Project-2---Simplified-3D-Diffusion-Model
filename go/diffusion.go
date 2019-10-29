@@ -6,3 +6,8 @@
 // /tmp/diffusion.java
 // Accessed Tuesday, October 29th, 2019
 
+func main() {
+
+	var maxSize int = 10
+
+}
