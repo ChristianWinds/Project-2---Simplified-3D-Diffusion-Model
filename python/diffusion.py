@@ -18,9 +18,9 @@ https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/
 Accessed Tuesday, October 29th, 2019
 """
 rows, columns, layers = (maxSize, maxSize, maxSize)
-cube = [[[0.0 for i in range(layers)] for j in range (columns)] for k in range(rows)]
 
 # Zero the cube
+cube = [[[0.0 for i in range(layers)] for j in range (columns)] for k in range(rows)]
 
 diffusionCoefficient = 0.175
 
