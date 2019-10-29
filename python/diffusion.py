@@ -61,10 +61,16 @@ while True:
 							    (((i == l + 1) and (j == m) and (k == n)) or
 							    (((i == l - 1) and (j == m) and (k == n))):
 
+# Check for mass consistency
+sumVal = 0.0
+for i in range (maxSize):
+	for j in range (maxSize):
+		for k in range (maxSize):
+
+ratio = float(minVal) / float(maxVal)
 	# Use an if statemene and a break instruction to simulate the end of a
 	# do while loop
 	if (ratio >= 0.99)
 		break
 
-# Check for mass consistency
 
