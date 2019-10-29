@@ -88,7 +88,7 @@ while True:
 
 	# Use an if statement and a break instruction to simulate the end of a
 	# do while loop
-	if (ratio >= 0.99)
+	if (ratio >= 0.99):
 		break
 
 print("Box equilibrated in ", time, " seconds of simulated time.")
