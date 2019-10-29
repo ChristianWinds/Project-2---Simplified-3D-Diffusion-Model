@@ -69,11 +69,11 @@ for i in range (maxSize):
 
 ratio = float(minVal) / float(maxVal)
 
-print("  ")
+print(time, " ", ratio, " ", sumVal)
 
 	# Use an if statement and a break instruction to simulate the end of a
 	# do while loop
 	if (ratio >= 0.99)
 		break
 
-print("Box equilibrated in  seconds of simulated time.")
+print("Box equilibrated in ", time, " seconds of simulated time.")
