@@ -11,9 +11,9 @@ import "fmt"
 
 func main() {
 
-	var maxSize int = 10
+	var maxSize uint64 = 10
+	var cube [maxSize][maxSize] float64 
 
 	fmt.Println("  ")
 	fmt.Println("Box equilibrated in  seconds of simulated time.")
-
 }
