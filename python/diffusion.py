@@ -27,7 +27,7 @@ dTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetwe
 # Initialize the first cell
 
 
-pass = 0
+passes = 0
 
 # Create a double variable to track increasing system time
 time = 0.0
