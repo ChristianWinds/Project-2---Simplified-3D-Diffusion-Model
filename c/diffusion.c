@@ -3,6 +3,8 @@
  * School Year: 2019-2020 School Year */
 #include <stdio.h>
 
+// Checked for mass consistency by Dr. Pounds on 10/25/19
+
 /* Code from Tutorialspoint,
  * https://www.tutorialspoint.com/cprogramming/c_functions.htm
  * Accessed Wednesday, October 23rd, 2019 */
