@@ -39,7 +39,7 @@ distanceBetweenBlocks = float(roomDimension) / float(maxSize)
 dTerm = float(diffusionCoefficient) * float(timestep) / (float(distanceBetweenBlocks) * float(distanceBetweenBlocks))
 
 # Initialize the first cell
-
+cube[0][0][0] = 1.0e21
 
 passes = 0
 
@@ -68,16 +68,23 @@ while True:
 							    (((i == l) and (j == m - 1) and (k == n)) or
 							    (((i == l + 1) and (j == m) and (k == n)) or
 							    (((i == l - 1) and (j == m) and (k == n))):
+								change = (cube[i][j][k] - cube[l][m][n]) * dTerm
+								cube[i][j][k] = cube[i][j][k] - change
+								cube[l][m][n] = cube[l][m][n] + change
+	time = time + timestep
 
-# Check for mass consistency
-sumVal = 0.0
-for i in range (maxSize):
-	for j in range (maxSize):
-		for k in range (maxSize):
+	# Check for mass consistency
+	sumVal = 0.0
+	for i in range (maxSize):
+		for j in range (maxSize):
+			for k in range (maxSize):
+				maxVal = max(cube[i][j][k], maxVal)
+				minVal = min(cube[i][j][k], minVal)
+				sumVal += cube[i][j][k]
 
-ratio = float(minVal) / float(maxVal)
+	ratio = float(minVal) / float(maxVal)
 
-print(time, " ", ratio, " ", sumVal)
+	print(time, " ", ratio, " ", sumVal)
 
 	# Use an if statement and a break instruction to simulate the end of a
 	# do while loop
