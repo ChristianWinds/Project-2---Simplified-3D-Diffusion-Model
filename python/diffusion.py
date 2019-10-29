@@ -48,7 +48,18 @@ ratio = 0.0
 
 # Use a while True loop to simulate the beginning of a do while loop
 while True:
-
+	for i in range (maxSize):
+		for j in range (maxSize):
+			for k in range (maxSize):
+				for l in range (maxSize):
+					for m in range (maxSize):
+						for n in range (maxSize):
+							if (((i == l) and (j == m) and (k == n + 1)) or
+							    (((i == l) and (j == m) and (k == n - 1)) or
+							    (((i == l) and (j == m + 1) and (k == n)) or
+							    (((i == l) and (j == m - 1) and (k == n)) or
+							    (((i == l + 1) and (j == m) and (k == n)) or
+							    (((i == l - 1) and (j == m) and (k == n))):
 
 	# Use an if statemene and a break instruction to simulate the end of a
 	# do while loop
