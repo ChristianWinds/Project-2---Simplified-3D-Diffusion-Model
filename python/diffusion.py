@@ -75,6 +75,8 @@ while True:
 
 	# Check for mass consistency
 	sumVal = 0.0
+	maxVal = cube[0][0][0]
+	minVal = cube[0][0][0]
 	for i in range (maxSize):
 		for j in range (maxSize):
 			for k in range (maxSize):
