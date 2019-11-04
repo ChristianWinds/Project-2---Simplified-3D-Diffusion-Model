@@ -86,7 +86,7 @@ while True:
 
 	ratio = float(minVal) / float(maxVal)
 
-	print(time, " ", ratio, " ", sumVal)
+	print(time, ratio, sumVal)
 
 	# Use an if statement and a break instruction to simulate the end of a
 	# do while loop
