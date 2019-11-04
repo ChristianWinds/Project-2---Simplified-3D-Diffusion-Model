@@ -1,2 +1,5 @@
 # ignore executable files
 *.exe
+
+# ignore .swp files
+ *.swp
