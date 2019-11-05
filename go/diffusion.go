@@ -27,9 +27,9 @@ func main() {
 	var speedOfGasMolecules float64 = 250.0
 
 	// Create a timestep variable to represent the value of h in seconds
-	var timestep float64 = (roomDimension / speedOfGasMolecules) / maxSize
+	var timestep float64 = (roomDimension / speedOfGasMolecules) / float64(maxSize)
 
-	var distanceBetweenBlocks float64 = roomDimension / maxSize
+	var distanceBetweenBlocks float64 = roomDimension / float64(maxSize)
 
 	var dTerm float64 = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
 
