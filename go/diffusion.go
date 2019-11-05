@@ -12,7 +12,7 @@ import "fmt"
 func main() {
 
 	var maxSize uint64 = 10
-	var cube [maxSize][maxSize] float64 
+	cube := make([]float64, maxSize) [maxSize] float64 
 
 	// Zero the cube
 
