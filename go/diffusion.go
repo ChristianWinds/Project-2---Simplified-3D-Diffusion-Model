@@ -15,7 +15,16 @@ func main() {
 	cube := make([][][]float64, maxSize)
 
 	// Zero the cube
-
+	var i int
+	var j int
+	var k int
+	for i := 0; i < maxSize; i++ {
+		for j := 0; j < maxSize; j++ {
+			for k := 0; k < maxSize; k++ {
+				cube[i][j][k] = 0.0
+			}
+		}
+	}
 
 	var diffusionCoefficient float64 = 0.175
 
