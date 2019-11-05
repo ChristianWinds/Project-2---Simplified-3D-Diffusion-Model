@@ -18,9 +18,9 @@ func main() {
 	var i int
 	var j int
 	var k int
-	for i := 0; i < maxSize; i++ {
-		for j := 0; j < maxSize; j++ {
-			for k := 0; k < maxSize; k++ {
+	for i := 0; i < int(maxSize); i++ {
+		for j := 0; j < int(maxSize); j++ {
+			for k := 0; k < int(maxSize); k++ {
 				cube[i][j][k] = 0.0
 			}
 		}
