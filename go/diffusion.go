@@ -60,17 +60,46 @@ func main() {
 					for l = 0; l < maxSize; l++ {
 						for m = 0; m < maxSize; m++ {
 							for n = 0; n < maxSize; n++ {
-								if
+								if (((i == l) && (j == m) && (k == n + 1)) ||
+								   ((i == l) && (j == m) && (k == n - 1)) ||
+								   ((i == l) && (j == m + 1) && (k == n)) ||
+								   ((i == l) && (j == m - 1) && (k == n)) ||
+								   ((i == l + 1) && (j == m) && (k == n)) ||
+								   ((i == l - 1) && (j == m) && (k == n))) {
+									var change float64 := (cube[i][j][k] - cube[l][m][n]) * dTerm
+									cube[i][j][k] = cube[i][j][k] - change
+									cube[l][m][n] = cube[l][m][n] + change
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		time += time + timestep
+
+		// Check for mass consistency
+		var sumVal float64 = 0.0
+		var maxVal float64 = cube[0][0][0]
+		var minVal float64 = cube[0][0][0]
+
+		for i = 0; i < maxSize; i++ {
+			for i = 0; i < maxSize; i++ {
+				for i = 0; i < maxSize; i++ {
+					sumVal += cube[i][j][k]
+				}
+			}
+		}
+
+		ratio = minVal / maxVal
+
+		fmt.Println("  ")
+
 		if !(ratio < 0.99) {
 			break
 		}
 	}
 
-	// Check for mass consistency
-	var sumVal float64 = 0.0
-	var maxVal float64 = cube[0][0][0]
-	var minVal float64 = cube[0][0][0]
-
-	fmt.Println("  ")
 	fmt.Println("Box equilibrated in  seconds of simulated time.")
 }
