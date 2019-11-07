@@ -46,6 +46,19 @@ func main() {
 	var time float64 = 0.0
 	var ratio float64 = 0.0
 
+	var l int
+	var m int
+	var n int
+
+	// Code from YourBasic,
+	// https://yourbasic.org/golang/do-while-loop/
+	// Accessed Thursday, November 7th, 2019
+	for {
+		if !(ratio < 0.99) {
+			break
+		}
+	}
+
 	// Check for mass consistency
 	var sumVal float64 = 0.0
 	var maxVal float64 = cube[0][0][0]
