@@ -15,13 +15,10 @@ func main() {
 	cube := make([][][]float64, maxSize)
 
 	// Zero the cube
-	var i int
-	var j int
-	var k int
 	fmt.Println("TEST: i, j, k declared")
-	for i = 0; i < int(maxSize) - 1; i++ {
-		for j = 0; j < int(maxSize) - 1; j++ {
-			for k = 0; k < int(maxSize) - 1; k++ {
+	for i := 0; i < int(maxSize) - 1; i++ {
+		for j := 0; j < int(maxSize) - 1; j++ {
+			for k := 0; k < int(maxSize) - 1; k++ {
 				fmt.Println("TEST: Entered first nested for loop set")
 				cube[i][j][k] = 0.0
 				fmt.Println("TEST: Initialized a cube cell")
@@ -57,9 +54,9 @@ func main() {
 	// https://yourbasic.org/golang/do-while-loop/
 	// Accessed Thursday, November 7th, 2019
 	for {
-		for i = 0; i < int(maxSize); i++ {
-			for j = 0; j < int(maxSize); j++ {
-				for k = 0; k < int(maxSize); k++ {
+		for i := 0; i < int(maxSize); i++ {
+			for j := 0; j < int(maxSize); j++ {
+				for k := 0; k < int(maxSize); k++ {
 					for l = 0; l < int(maxSize); l++ {
 						for m = 0; m < int(maxSize); m++ {
 							for n = 0; n < int(maxSize); n++ {
@@ -87,9 +84,9 @@ func main() {
 		var maxVal float64 = cube[0][0][0]
 		var minVal float64 = cube[0][0][0]
 
-		for i = 0; i < int(maxSize); i++ {
-			for i = 0; i < int(maxSize); i++ {
-				for i = 0; i < int(maxSize); i++ {
+		for i := 0; i < int(maxSize); i++ {
+			for j:= 0; j < int(maxSize); j++ {
+				for k := 0; k < int(maxSize); k++ {
 					sumVal += cube[i][j][k]
 				}
 			}
