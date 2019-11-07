@@ -54,6 +54,13 @@ func main() {
 	// https://yourbasic.org/golang/do-while-loop/
 	// Accessed Thursday, November 7th, 2019
 	for {
+		for i = 0; i < maxSize; i++ {
+			for j = 0; j < maxSize; j++ {
+				for k = 0; k < maxSize; k++ {
+					for l = 0; l < maxSize; l++ {
+						for m = 0; m < maxSize; m++ {
+							for n = 0; n < maxSize; n++ {
+								if
 		if !(ratio < 0.99) {
 			break
 		}
