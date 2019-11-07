@@ -54,12 +54,12 @@ func main() {
 	// https://yourbasic.org/golang/do-while-loop/
 	// Accessed Thursday, November 7th, 2019
 	for {
-		for i = 0; i < maxSize; i++ {
-			for j = 0; j < maxSize; j++ {
-				for k = 0; k < maxSize; k++ {
-					for l = 0; l < maxSize; l++ {
-						for m = 0; m < maxSize; m++ {
-							for n = 0; n < maxSize; n++ {
+		for i = 0; i < int(maxSize); i++ {
+			for j = 0; j < int(maxSize); j++ {
+				for k = 0; k < int(maxSize); k++ {
+					for l = 0; l < int(maxSize); l++ {
+						for m = 0; m < int(maxSize); m++ {
+							for n = 0; n < int(maxSize); n++ {
 								if (((i == l) && (j == m) && (k == n + 1)) ||
 								   ((i == l) && (j == m) && (k == n - 1)) ||
 								   ((i == l) && (j == m + 1) && (k == n)) ||
@@ -84,9 +84,9 @@ func main() {
 		var maxVal float64 = cube[0][0][0]
 		var minVal float64 = cube[0][0][0]
 
-		for i = 0; i < maxSize; i++ {
-			for i = 0; i < maxSize; i++ {
-				for i = 0; i < maxSize; i++ {
+		for i = 0; i < int(maxSize); i++ {
+			for i = 0; i < int(maxSize); i++ {
+				for i = 0; i < int(maxSize); i++ {
 					sumVal += cube[i][j][k]
 				}
 			}
