@@ -22,9 +22,9 @@ func main() {
 	// Accessed Thursday, November 7th, 2019
 	for i := range cube {
 		fmt.Println("TEST: Passed first for loop starement of first nested for loop set")
-		for j := range cube[i] {
+		for j := range cube {
 			fmt.Println("TEST: Passed second for loop statement of first nested for loop set")
-			for k := range cube[i][j] {
+			for k := range cube {
 				fmt.Println("TEST: Passed third for loop statement of first nested for loop set")
 				cube[i][j][k] = 0.0
 				fmt.Println("TEST: Initialized a cube cell")
