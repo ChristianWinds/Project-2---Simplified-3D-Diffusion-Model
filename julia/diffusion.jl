@@ -26,3 +26,6 @@ timeamount = timeamount + timestep
 
 sumval = 0.0
 
+println(timeamount, " ", ratioamount, " ", sumval)
+
+println("Box equilibrated in ", timeamount, " seconds of simulated time.")
