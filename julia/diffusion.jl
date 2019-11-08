@@ -11,7 +11,7 @@
 =#
 
 maxsize = 10::Int64
-cube = Array{Float64}(maxsize,maxsize,maxsize)
+cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
 diffusion_coefficient = 0.175::Float64
 room_dimension = 5.0::Float64
