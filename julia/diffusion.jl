@@ -52,6 +52,10 @@ timeamount = (timeamount + timestep)::Float64
 
 # Check for mass consistency
 sumval = (0.0)::Float64
+maxval = cube[0, 0, 0]::Float64
+minval = cube[0, 0, 0]::Float64
+
+sumval += cube[0, 0, 0]::Float64
 
 println(timeamount, " ", ratioamount, " ", sumval)
 
