@@ -39,7 +39,7 @@ distance_between_blocks = (room_dimension / maxsize)::Float64
 dterm = (diffusion_coefficient * timestep / (distance_between_blocks * distance_between_blocks))::Float64
 
 # Initialize the first cell
-cube[0, 0, 0] = 1.0e21::Float64
+cube[1, 1, 1] = 1.0e21::Float64
 
 pass = 0::Int64
 
@@ -52,7 +52,7 @@ timeamount = (timeamount + timestep)::Float64
 
 # Check for mass consistency
 sumval = (0.0)::Float64
-maxval = cube[0, 0, 0]::Float64
+maxval = cube[1, 1, 1]::Float64
 minval = cube[0, 0, 0]::Float64
 
 sumval += cube[0, 0, 0]::Float64
