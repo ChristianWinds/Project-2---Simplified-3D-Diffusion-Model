@@ -14,7 +14,13 @@ maxsize = 10::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
 # Zero the cube
-cube[1, 1, 1] = 0.0::Float64
+for i = 1:maxsize
+	for j = 1:maxsize
+		for k = 1:maxsize
+			cube[i, j, k] = 0.0::Float64
+		end
+	end
+end
 
 diffusion_coefficient = 0.175::Float64
 room_dimension = 5.0::Float64
