@@ -51,7 +51,7 @@ ratioamount = 0.0::Float64
 timeamount = (timeamount + timestep)::Float64
 
 # Check for mass consistency
-sumval = (0.0)::Float64
+sumval = 0.0::Float64
 maxval = cube[1, 1, 1]::Float64
 minval = cube[1, 1, 1]::Float64
 for i = 1:maxsize
