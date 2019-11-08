@@ -26,6 +26,7 @@ diffusion_coefficient = 0.175::Float64
 
 # Create a variable for room dimension to represent 5 meters
 room_dimension = 5.0::Float64
+
 # Set a gas molecule speed variable to represent 100 g/mol gas molecules' speed
 # at room temperature
 speed_of_gas_molecules = 250.0::Float64
@@ -38,6 +39,7 @@ distance_between_blocks = (room_dimension / maxsize)::Float64
 dterm = (diffusion_coefficient * timestep / (distance_between_blocks * distance_between_blocks))::Float64
 
 # Initialize the first cell
+cube[0, 0, 0] = 1.0e21::Float64
 
 pass = 0::Int64
 timeamount = 0.0::Float64
