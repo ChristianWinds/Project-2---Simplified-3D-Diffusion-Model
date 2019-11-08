@@ -26,4 +26,3 @@ timeamount = timeamount + timestep
 
 sumval = 0.0
 
-ratioamount = minval / maxval
