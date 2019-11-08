@@ -12,7 +12,8 @@ import "fmt"
 func main() {
 
 	var maxSize uint64 = 10
-	cube := make([][][]float64, maxSize)
+	maxSize = 2
+	cube := make([][][]float64, 10)
 
 	cube[0][0][0] = 0.0
 	fmt.Println("Set cube[0][0][0] to 0.0")
