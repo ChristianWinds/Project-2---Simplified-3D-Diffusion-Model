@@ -11,3 +11,19 @@
 =#
 
 maxsize = 10
+diffusion_coefficient = 0.175
+room_dimension = 5
+speed_of_gas_molecules = 250.0
+timestep = (room_dimension / speed_of_gas_molecules) / maxsize
+distance_between_blocks = room_dimension / maxsize
+dterm = diffusion_coefficient * timestep / (distance_between_blocks * distance_between_blocks)
+
+pass = 0
+timeamount = 0.0
+ratioamount = 0.0
+
+timeamount = timeamount + timestep
+
+sumval = 0.0
+
+ratioamount = minval / maxval
