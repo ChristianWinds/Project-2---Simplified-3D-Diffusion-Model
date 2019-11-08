@@ -12,7 +12,7 @@
 
 maxsize = 10::Int64
 diffusion_coefficient = 0.175::Float64
-room_dimension = 5::Float64
+room_dimension = 5.0::Float64
 speed_of_gas_molecules = 250.0::Float64
 timestep = ((room_dimension / speed_of_gas_molecules) / maxsize)::Float64
 distance_between_blocks = (room_dimension / maxsize)::Float64
