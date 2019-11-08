@@ -14,6 +14,9 @@ func main() {
 	var maxSize uint64 = 10
 	cube := make([][][]float64, maxSize)
 
+	cube[0][0][0] = 0.0
+	fmt.Println("Set cube[0][0][0] to 0.0")
+
 	// Zero the cube
 	// Code from Stack Overflow,
 	// https://stackoverflow.com/questions/37668224/iterating-over-over-a-2d-slice-in-go
