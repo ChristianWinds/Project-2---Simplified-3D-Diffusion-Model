@@ -42,11 +42,15 @@ dterm = (diffusion_coefficient * timestep / (distance_between_blocks * distance_
 cube[0, 0, 0] = 1.0e21::Float64
 
 pass = 0::Int64
+
+# Create a variable to track increasing system time
 timeamount = 0.0::Float64
+
 ratioamount = 0.0::Float64
 
 timeamount = (timeamount + timestep)::Float64
 
+# Check for mass consistency
 sumval = (0.0)::Float64
 
 println(timeamount, " ", ratioamount, " ", sumval)
