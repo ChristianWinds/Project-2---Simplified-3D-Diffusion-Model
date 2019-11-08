@@ -57,6 +57,7 @@ minval = cube[1, 1, 1]::Float64
 for i = 1:maxsize
 	for j = 1:maxsize
 		for k = 1:maxsize
+			global sumval
 			sumval = sumval + cube[1, 1, 1]::Float64
 		end
 	end
