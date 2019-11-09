@@ -27,6 +27,9 @@ distance_between_blocks = room_dimension / maxsize
 
 DTerm = diffusion_coefficient * timestep / (distance_between_blocks * distance_between_blocks)
 
+# Initialize the first cell
+cube[0, 0, 0] = 1.0e21
+
 pass = 0
 
 # Create a variable to track increasing system time
