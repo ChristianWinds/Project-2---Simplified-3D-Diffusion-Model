@@ -40,6 +40,15 @@ time = 0.0
 
 ratio = 0.0
 
+# Code from Stack Overflow,
+# https://stackoverflow.com/questions/4357827/do-while-loop-in-r
+# Accessed Saturday, November 9th, 2019
+# and from YourBasic,
+# https://yourbasic.org/golang/do-while-loop/
+# Accessed Saturday, November 9th, 2019
+
+repeat
+{
 for (i in 1:maxsize)
 {
 	for (j in 1:maxsize)
@@ -70,6 +79,10 @@ for (i in 1:maxsize)
 time = time + timestep
 
 sumval = 0.0
-
+if (!(ratio < 0.99))
+{
+	break
+}
+}
 
 cat ("Box equilibrated in", time, "seconds of simulated time.\n")
