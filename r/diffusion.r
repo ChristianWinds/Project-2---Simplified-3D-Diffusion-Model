@@ -18,7 +18,7 @@ speed_of_gas_molecules = 250.0
 # Create a timestep variable to represent the value of h in seconds
 timestep = (room_dimension / speed_of_gas_molecules) / maxsize
 
-distanceBetweenBlocks = room_dimension / maxsize
+distance_between_blocks = room_dimension / maxsize
 
 DTerm = diffusion_coefficient * timestep / (distance_between_blocks * distance_between_blocks)
 
