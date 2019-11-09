@@ -22,6 +22,11 @@ distance_between_blocks = room_dimension / maxsize
 
 DTerm = diffusion_coefficient * timestep / (distance_between_blocks * distance_between_blocks)
 
+pass = 0
+
+# Create a variable to track increasing system time
 time = 0.0
+
+ratio = 0.0
 
 cat ("Box equilibrated in", time, "seconds of simulated time.\n")
