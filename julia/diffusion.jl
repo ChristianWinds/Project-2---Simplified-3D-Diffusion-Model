@@ -48,16 +48,28 @@ timeamount = 0.0::Float64
 
 ratioamount = 0.0::Float64
 
-if (((i == l) && (j == m) && (k == n + 1)) ||
-                                                                    ((i == l) && (j == m) && (k == n - 1)) ||
-                                                                    ((i == l) && (j == m + 1) && (k == n)) ||
-                                                                    ((i == l) && (j == m - 1) && (k == n)) ||
-                                                                    ((i == l + 1) && (j == m) && (k == n)) ||
-                                                                    ((i == l - 1) && (j == m) && (k == n)))
-	change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
-	cube[i, j, k] = (cube[i, j, k] - change)::Float64
-	cube[l, m, n] = (cube[l, m, n] + change)::Float64
-end	
+for i = 1:maxsize
+	for j = 1:maxsize
+		for k = 1:maxsize
+			for l = 1:maxsize
+				for m = 1:maxsize
+					for n = 1:maxsize
+						if (((i == l) && (j == m) && (k == n + 1)) ||
+						    ((i == l) && (j == m) && (k == n - 1)) ||
+						    ((i == l) && (j == m + 1) && (k == n)) ||
+						    ((i == l) && (j == m - 1) && (k == n)) ||
+						    ((i == l + 1) && (j == m) && (k == n)) ||
+						    ((i == l - 1) && (j == m) && (k == n)))
+							change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
+							cube[i, j, k] = (cube[i, j, k] - change)::Float64
+							cube[l, m, n] = (cube[l, m, n] + change)::Float64
+						end
+					end
+				end
+			end
+		end
+	end
+end
 
 timeamount = (timeamount + timestep)::Float64
 
