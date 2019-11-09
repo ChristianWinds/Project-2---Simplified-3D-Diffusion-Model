@@ -7,4 +7,4 @@
 |#
 
 (defvar maxSize 10)
-(setf a (make-array '(maxSize maxSize maxSize)))
+(setf a (make-array '(1 1 1)))
