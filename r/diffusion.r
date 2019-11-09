@@ -79,7 +79,8 @@ repeat
 
 	# Check for mass consistency
 	sumval = 0.0
-
+	maxval = cube[0, 0, 0]
+	minval = cube[0, 0, 0]
 	for (i in 1:maxsize)
 	{
 		for (j in 1:maxsize)
