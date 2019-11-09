@@ -14,8 +14,6 @@ func main() {
 	const maxSize int = 10
 	var cube[maxSize][maxSize][maxSize] float64
 
-	cube[1][1][1] = 0.0
-
 	// Zero the cube
 	// Code from Stack Overflow,
 	// https://stackoverflow.com/questions/37668224/iterating-over-over-a-2d-slice-in-go
