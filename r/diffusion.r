@@ -85,6 +85,8 @@ repeat
 		}
 	}
 
+	cat (time, ratio, sumval, "\n")
+
 	if (!(ratio < 0.99))
 	{
 		break
