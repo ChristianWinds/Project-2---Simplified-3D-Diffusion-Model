@@ -87,6 +87,8 @@ while true
 	sumval = 0.0::Float64
 	maxval = cube[1, 1, 1]::Float64
 	minval = cube[1, 1, 1]::Float64
+	maxval = maximum(cube)
+	minval = minimum(cube)
 	for i = 1:maxsize
 		for j = 1:maxsize
 			for k = 1:maxsize
