@@ -81,6 +81,7 @@ repeat
 		{
 			for (k in 1:maxsize)
 			{
+				sumval = sumval + cube[i, j, k]
 			}
 		}
 	}
