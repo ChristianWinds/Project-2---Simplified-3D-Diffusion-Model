@@ -52,6 +52,9 @@ ratioamount = 0.0::Float64
 	Code from Rosetta Code,
 	https://www.rosettacode.org/wiki/Loops/Do-while#Julia
 	Accessed Friday, November 8th, 2019
+	and from YourBasic,
+	https://yourbasic.org/golang/do-while-loop/
+	Accessed Saturday, November 9th, 2019
 =#
 while true
 	for i = 1:maxsize
@@ -93,6 +96,9 @@ while true
 	end
 
 	println(timeamount, " ", ratioamount, " ", sumval)
-	ratioamount < 0.99 && break
+
+	if (!(ratioamount < 0.99))
+		break
+	end
 end
 println("Box equilibrated in ", timeamount, " seconds of simulated time.")
