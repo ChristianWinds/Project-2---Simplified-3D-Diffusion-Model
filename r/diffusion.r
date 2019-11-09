@@ -9,7 +9,7 @@
 # Accessed Saturday, November 9th, 2019
 
 maxsize = 10
-dim(cube) = c(maxsize,maxsize,maxsize)
+cube <- array(0, dim = c(maxsize,maxsize,maxsize))
 
 # Zero the cube
 for (i in 1:maxsize)
