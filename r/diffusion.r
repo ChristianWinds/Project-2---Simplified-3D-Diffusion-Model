@@ -27,6 +27,10 @@ pass = 0
 # Create a variable to track increasing system time
 time = 0.0
 
+time = time + timestep
+
+sumval = 0.0
+
 ratio = 0.0
 
 cat ("Box equilibrated in", time, "seconds of simulated time.\n")
