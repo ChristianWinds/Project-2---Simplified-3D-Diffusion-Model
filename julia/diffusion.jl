@@ -77,6 +77,7 @@ while true
 		end
 	end
 
+	global timeamount
 	timeamount = (timeamount + timestep)::Float64
 
 	# Check for mass consistency
