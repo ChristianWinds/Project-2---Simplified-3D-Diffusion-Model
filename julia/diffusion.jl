@@ -87,8 +87,13 @@ while true
 	sumval = 0.0::Float64
 	maxval = cube[1, 1, 1]::Float64
 	minval = cube[1, 1, 1]::Float64
-	maxval = maximum(cube)
-	minval = minimum(cube)
+	# Use Julia's maximum function to determine the highest value in the
+	# cube array
+	maxval = maximum(cube)::Float64
+
+	# Use Julia's minimum function to determine the lowest value in the cube
+	# array
+	minval = minimum(cube)::Float64
 	for i = 1:maxsize
 		for j = 1:maxsize
 			for k = 1:maxsize
