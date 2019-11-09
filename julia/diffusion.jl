@@ -48,44 +48,51 @@ timeamount = 0.0::Float64
 
 ratioamount = 0.0::Float64
 
-for i = 1:maxsize
-	for j = 1:maxsize
-		for k = 1:maxsize
-			for l = 1:maxsize
-				for m = 1:maxsize
-					for n = 1:maxsize
-						if (((i == l) && (j == m) && (k == n + 1)) ||
-						    ((i == l) && (j == m) && (k == n - 1)) ||
-						    ((i == l) && (j == m + 1) && (k == n)) ||
-						    ((i == l) && (j == m - 1) && (k == n)) ||
-						    ((i == l + 1) && (j == m) && (k == n)) ||
-						    ((i == l - 1) && (j == m) && (k == n)))
-							change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
-							cube[i, j, k] = (cube[i, j, k] - change)::Float64
-							cube[l, m, n] = (cube[l, m, n] + change)::Float64
+#=
+	Code from Rosetta Code,
+	https://www.rosettacode.org/wiki/Loops/Do-while#Julia
+	Accessed Friday, November 8th, 2019
+=#
+while true
+	for i = 1:maxsize
+		for j = 1:maxsize
+			for k = 1:maxsize
+				for l = 1:maxsize
+					for m = 1:maxsize
+						for n = 1:maxsize
+							if (((i == l) && (j == m) && (k == n + 1)) ||
+							    ((i == l) && (j == m) && (k == n - 1)) ||
+							    ((i == l) && (j == m + 1) && (k == n)) ||
+							    ((i == l) && (j == m - 1) && (k == n)) ||
+							    ((i == l + 1) && (j == m) && (k == n)) ||
+							    ((i == l - 1) && (j == m) && (k == n)))
+								change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
+								cube[i, j, k] = (cube[i, j, k] - change)::Float64
+								cube[l, m, n] = (cube[l, m, n] + change)::Float64
+							end
 						end
 					end
 				end
 			end
 		end
 	end
-end
 
-timeamount = (timeamount + timestep)::Float64
+	timeamount = (timeamount + timestep)::Float64
 
-# Check for mass consistency
-sumval = 0.0::Float64
-maxval = cube[1, 1, 1]::Float64
-minval = cube[1, 1, 1]::Float64
-for i = 1:maxsize
-	for j = 1:maxsize
-		for k = 1:maxsize
-			global sumval
-			sumval = sumval + cube[1, 1, 1]::Float64
+	# Check for mass consistency
+	sumval = 0.0::Float64
+	maxval = cube[1, 1, 1]::Float64
+	minval = cube[1, 1, 1]::Float64
+	for i = 1:maxsize
+		for j = 1:maxsize
+			for k = 1:maxsize
+				global sumval
+				sumval = sumval + cube[1, 1, 1]::Float64
+			end
 		end
 	end
+
+	println(timeamount, " ", ratioamount, " ", sumval)
+	ratio < 0.99 && break
 end
-
-println(timeamount, " ", ratioamount, " ", sumval)
-
 println("Box equilibrated in ", timeamount, " seconds of simulated time.")
