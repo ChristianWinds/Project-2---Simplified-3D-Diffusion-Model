@@ -47,6 +47,7 @@ func main() {
 
 	// Create a double variable to track increasing system time
 	var time float64 = 0.0
+
 	var ratio float64 = 0.0
 
 	var l int
@@ -80,7 +81,7 @@ func main() {
 			}
 		}
 
-		time += time + timestep
+		time = time + timestep
 
 		// Check for mass consistency
 		var sumVal float64 = 0.0
