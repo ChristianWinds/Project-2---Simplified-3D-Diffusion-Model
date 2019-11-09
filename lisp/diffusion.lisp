@@ -5,3 +5,4 @@
 |#
 
 #!/usr/bin/sbcl --script
+(defvar maxSize 10)
