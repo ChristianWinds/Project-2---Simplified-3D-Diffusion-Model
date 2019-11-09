@@ -11,17 +11,6 @@
 maxsize = 10
 cube <- array(0, dim = c(maxsize,maxsize,maxsize))
 
-# Zero the cube
-for (i in 1:maxsize)
-{
-	for (j in 1:maxsize)
-	{
-		for (k in 1:maxsize)
-		{
-		}
-	}
-}
-
 diffusion_coefficient = 0.175
 
 # Create a variable for room dimension to represent 5 meters
