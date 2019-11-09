@@ -11,7 +11,6 @@ import "fmt"
 import "math"
 
 func main() {
-
 	const maxSize int = 10
 	var cube[maxSize][maxSize][maxSize] float64
 
