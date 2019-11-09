@@ -48,6 +48,17 @@ timeamount = 0.0::Float64
 
 ratioamount = 0.0::Float64
 
+if (((i == l) && (j == m) && (k == n + 1)) ||
+                                                                    ((i == l) && (j == m) && (k == n - 1)) ||
+                                                                    ((i == l) && (j == m + 1) && (k == n)) ||
+                                                                    ((i == l) && (j == m - 1) && (k == n)) ||
+                                                                    ((i == l + 1) && (j == m) && (k == n)) ||
+                                                                    ((i == l - 1) && (j == m) && (k == n)))
+	change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
+	cube[i, j, k] = (cube[i, j, k] - change)::Float64
+	cube[l, m, n] = (cube[l, m, n] + change)::Float64
+end	
+
 timeamount = (timeamount + timestep)::Float64
 
 # Check for mass consistency
