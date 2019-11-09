@@ -7,4 +7,4 @@
 |#
 
 (defvar maxSize 10)
-(setf a (make-array '(1 1)))
+(setf cube (make-array '(maxSize maxSize maxSize)))
