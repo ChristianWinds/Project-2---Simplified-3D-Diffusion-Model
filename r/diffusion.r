@@ -89,10 +89,14 @@ repeat
 			{
 				# Create a vector for the max function to
 				# determine the higher read value
-				maxval = max
+				maxfunctionvector <-c(cube[i, j, k], maxval)
+
+				maxval = max(maxfunctionvector)
 
 				# Create a vector for the min function to
 				# determine the lower read value
+
+
 				sumval = sumval + cube[i, j, k]
 			}
 		}
