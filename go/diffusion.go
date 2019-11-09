@@ -91,6 +91,7 @@ func main() {
 		for i := 0; i < int(maxSize); i++ {
 			for j:= 0; j < int(maxSize); j++ {
 				for k := 0; k < int(maxSize); k++ {
+					maxVal = Max(cube[i][j][k], maxVal)
 					sumVal += cube[i][j][k]
 				}
 			}
