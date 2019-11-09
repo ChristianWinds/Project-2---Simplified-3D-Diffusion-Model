@@ -12,7 +12,7 @@ import "fmt"
 func main() {
 
 	const maxSize int = 10
-	var cube[maxsize][maxSize][maxSize] float64
+	var cube[maxSize][maxSize][maxSize] float64
 
 	cube[1][1][1] = 0.0
 	fmt.Println("Set cube[1][1][1] to 0.0")
