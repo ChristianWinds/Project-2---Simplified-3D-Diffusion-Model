@@ -22,19 +22,9 @@ func main() {
 	// https://stackoverflow.com/questions/37668224/iterating-over-over-a-2d-slice-in-go
 	// Accessed Thursday, November 7th, 2019
 	for i := range cube {
-		fmt.Println("TEST: Passed first for loop starement of first nested for loop set")
-		fmt.Println("i == ", i)
 		for j := range cube {
-			fmt.Println("TEST: Passed second for loop statement of first nested for loop set")
-			fmt.Println("i == ", i)
-			fmt.Println("j == ", j)
 			for k := range cube {
-				fmt.Println("TEST: Passed third for loop statement of first nested for loop set")
-				fmt.Println("i == ", i)
-				fmt.Println("j == ", j)
-				fmt.Println("k == ", k)
 				cube[i][j][k] = 0.0
-				fmt.Println("TEST: Initialized a cube cell")
 			}
 		}
 	}
