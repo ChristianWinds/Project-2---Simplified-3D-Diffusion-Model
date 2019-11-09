@@ -43,7 +43,7 @@ func main() {
 	var dTerm float64 = diffusionCoefficient * timestep / (distanceBetweenBlocks * distanceBetweenBlocks)
 
 	// Initialize the first cell
-	cube[1][1][1] = 1.0e21
+	cube[0][0][0] = 1.0e21
 
 	// Create a double variable to track increasing system time
 	var time float64 = 0.0
