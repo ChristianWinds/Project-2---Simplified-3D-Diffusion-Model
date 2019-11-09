@@ -15,7 +15,6 @@ func main() {
 	var cube[maxSize][maxSize][maxSize] float64
 
 	cube[1][1][1] = 0.0
-	fmt.Println("Set cube[1][1][1] to 0.0")
 
 	// Zero the cube
 	// Code from Stack Overflow,
