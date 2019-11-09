@@ -93,6 +93,7 @@ func main() {
 			for j:= 0; j < int(maxSize); j++ {
 				for k := 0; k < int(maxSize); k++ {
 					maxVal = math.Max(cube[i][j][k], maxVal)
+					minVal = math.Min(cube[i][j][k], minVal)
 					sumVal += cube[i][j][k]
 				}
 			}
