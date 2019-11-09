@@ -95,7 +95,9 @@ repeat
 
 				# Create a vector for the min function to
 				# determine the lower read value
+				minfunctionvector <-c(cube[i, j, k], minval)
 
+				minval = min(minfunctionvector)
 
 				sumval = sumval + cube[i, j, k]
 			}
