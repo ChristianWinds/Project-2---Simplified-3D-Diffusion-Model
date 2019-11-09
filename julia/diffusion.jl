@@ -1,3 +1,5 @@
+#!/usr/bin/julia
+
 #=
 	Programmer: Christian Winds
 	Course: CSC 330 Organization of Programming Languages
