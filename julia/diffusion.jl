@@ -91,9 +91,7 @@ while true
 	for i = 1:maxsize
 		for j = 1:maxsize
 			for k = 1:maxsize
-				global maxval
 				maxval = max(cube[i, j, k], maxval)::Float64
-				global minval
 				minval = min(cube[i, j, k], minval)::Float64
 				sumval = sumval + cube[i, j, k]::Float64
 			end
