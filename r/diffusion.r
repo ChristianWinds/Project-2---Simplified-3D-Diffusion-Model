@@ -1,3 +1,7 @@
+#!/usr/bin/env Rscript
+
 # Programmer: Christian Winds
 # Course: CSC 330 Organization of Programming Languages
 # School Year: 2019-2020 School Year
+
+maxsize = 10
