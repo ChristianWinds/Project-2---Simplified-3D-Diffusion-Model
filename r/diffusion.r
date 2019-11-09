@@ -27,10 +27,38 @@ pass = 0
 # Create a variable to track increasing system time
 time = 0.0
 
+ratio = 0.0
+
+for (i in 1:maxsize)
+{
+	for (j in 1:maxsize)
+	{
+		for (k in 1:maxsize)
+		{
+			for (l in 1:maxsize)
+			{
+				for (m in 1:maxsize)
+				{
+					for (n in 1:maxsize)
+					{
+						if (((i == l) && (j == m) && (k == n + 1)) ||
+						    ((i == l) && (j == m) && (k == n - 1)) ||
+						    ((i == l) && (j == m + 1) && (k == n)) ||
+						    ((i == l) && (j == m - 1) && (k == n)) ||
+						    ((i == l + 1) && (j == m) && (k == n)) ||
+						    ((i == l - 1) && (j == m) && (k == n))) {
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 time = time + timestep
 
 sumval = 0.0
 
-ratio = 0.0
 
 cat ("Box equilibrated in", time, "seconds of simulated time.\n")
