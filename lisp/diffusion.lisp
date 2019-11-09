@@ -7,3 +7,4 @@
 |#
 
 (defvar maxSize 10)
+(setf cube (make-array '(maxSize maxSize maxSize)))
