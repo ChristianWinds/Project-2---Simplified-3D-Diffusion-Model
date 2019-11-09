@@ -104,6 +104,8 @@ repeat
 		}
 	}
 
+	ratio = minval / maxval
+
 	cat (time, ratio, sumval, "\n")
 
 	if (!(ratio < 0.99))
