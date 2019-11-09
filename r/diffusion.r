@@ -50,7 +50,6 @@ ratio = 0.0
 # and from YourBasic,
 # https://yourbasic.org/golang/do-while-loop/
 # Accessed Saturday, November 9th, 2019
-
 repeat
 {
 	for (i in 1:maxsize)
