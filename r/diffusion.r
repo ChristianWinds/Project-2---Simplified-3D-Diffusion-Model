@@ -53,40 +53,41 @@ ratio = 0.0
 
 repeat
 {
-for (i in 1:maxsize)
-{
-	for (j in 1:maxsize)
+	for (i in 1:maxsize)
 	{
-		for (k in 1:maxsize)
+		for (j in 1:maxsize)
 		{
-			for (l in 1:maxsize)
+			for (k in 1:maxsize)
 			{
-				for (m in 1:maxsize)
+				for (l in 1:maxsize)
 				{
-					for (n in 1:maxsize)
+					for (m in 1:maxsize)
 					{
-						if (((i == l) && (j == m) && (k == n + 1)) ||
-						    ((i == l) && (j == m) && (k == n - 1)) ||
-						    ((i == l) && (j == m + 1) && (k == n)) ||
-						    ((i == l) && (j == m - 1) && (k == n)) ||
-						    ((i == l + 1) && (j == m) && (k == n)) ||
-						    ((i == l - 1) && (j == m) && (k == n))) {
+						for (n in 1:maxsize)
+						{
+							if (((i == l) && (j == m) && (k == n + 1)) ||
+							    ((i == l) && (j == m) && (k == n - 1)) ||
+							    ((i == l) && (j == m + 1) && (k == n)) ||
+							    ((i == l) && (j == m - 1) && (k == n)) ||
+							    ((i == l + 1) && (j == m) && (k == n)) ||
+							    ((i == l - 1) && (j == m) && (k == n)))
+							{
 
+							}
 						}
 					}
 				}
 			}
 		}
 	}
-}
 
-time = time + timestep
+	time = time + timestep
 
-sumval = 0.0
-if (!(ratio < 0.99))
-{
-	break
-}
+	sumval = 0.0
+	if (!(ratio < 0.99))
+	{
+		break
+	}
 }
 
 cat ("Box equilibrated in", time, "seconds of simulated time.\n")
