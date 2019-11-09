@@ -8,4 +8,4 @@ maxsize = 10
 
 time = 0.0
 
-cat ("Box equilibrated in ", time, " seconds of simulated time.")
+cat ("Box equilibrated in", time, "seconds of simulated time.")
