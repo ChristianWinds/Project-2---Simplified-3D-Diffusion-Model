@@ -10,7 +10,7 @@
 	Accessed Friday, November 8th, 2019
 =#
 
-maxsize = 10::Int64
+maxsize = 10.0::Float64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
 # Zero the cube
