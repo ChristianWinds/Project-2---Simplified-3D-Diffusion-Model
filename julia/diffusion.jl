@@ -93,6 +93,6 @@ while true
 	end
 
 	println(timeamount, " ", ratioamount, " ", sumval)
-	ratio < 0.99 && break
+	ratioamount < 0.99 && break
 end
 println("Box equilibrated in ", timeamount, " seconds of simulated time.")
