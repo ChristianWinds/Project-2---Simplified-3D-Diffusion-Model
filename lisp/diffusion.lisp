@@ -4,4 +4,4 @@
  | School Year: 2019-2020 School Year
 |#
 
-
+#!/usr/bin/sbcl --script
