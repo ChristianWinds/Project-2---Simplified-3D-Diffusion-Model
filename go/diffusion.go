@@ -100,12 +100,12 @@ func main() {
 
 		ratio = minVal / maxVal
 
-		fmt.Println("  ")
+		fmt.Println(time, " ", ratio, " ", sumVal)
 
 		if !(ratio < 0.99) {
 			break
 		}
 	}
 
-	fmt.Println("Box equilibrated in  seconds of simulated time.")
+	fmt.Println("Box equilibrated in ", time, " seconds of simulated time.")
 }
