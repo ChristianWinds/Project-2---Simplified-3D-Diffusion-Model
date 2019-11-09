@@ -82,7 +82,19 @@ repeat
 
 	time = time + timestep
 
+	# Check for mass consistency
 	sumval = 0.0
+
+	for (i in 1:maxsize)
+	{
+		for (j in 1:maxsize)
+		{
+			for (k in 1:maxsize)
+			{
+			}
+		}
+	}
+
 	if (!(ratio < 0.99))
 	{
 		break
