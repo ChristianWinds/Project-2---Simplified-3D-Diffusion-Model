@@ -14,7 +14,15 @@ using System.Collections.Generic;
 
 class diffusion
 {
-	public static bool CheckIfCellInPartition()
+	public static bool CheckIfCellInPartition(int arrayCellX,
+						  int arrayCellY,
+						  int arrayCellZ,
+						  int partitionXMin,
+						  int partitionXMax,
+						  int partitionYMin,
+						  int partitionYMax,
+						  int partitionZMin,
+						  int partitionZMax)
 	{
 		// Precondition: All coordinates received by this method are
 		// valid three-dimensional coordinates, and the received cell
