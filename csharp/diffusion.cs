@@ -10,11 +10,19 @@
 // Checked for mass consistency by Dr. Pounds on 10/19/19
 
 using System;
+using System.Collections.Generic;
 
 class diffusion
 {
 	static void Main(string[] args)
 	{
+		bool partition = false;
+
+		if (string.Compare(args[1], "partition") == 0)
+		{
+			partition = true;
+		}
+		
 		int maxSize = 10;
 		double[, ,] cube = new double[maxSize, maxSize, maxSize];
 
