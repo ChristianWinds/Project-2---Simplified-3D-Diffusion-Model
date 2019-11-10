@@ -31,8 +31,7 @@ class diffusion
 			Console.WriteLine("Ending program...");
 			return 1;
 		}
-
-		if (args.Length > 0)
+		else if (args.Length > 0)
 		{
 			// Test whether a valid room size was entered to
 			// determine whether to continue the program with the
@@ -45,16 +44,19 @@ class diffusion
                         	return 1;
 			}
 
-			if (string.Compare(args[1], "partition") == 0)
+			if (args.Length >= 2)
 			{
-				partition = true;
-			}
-			else
-			{
-				partition = false;
+				if (string.Compare(args[1], "partition") == 0)
+				{
+					partition = true;
+				}
+				else
+				{
+					partition = false;
+				}
 			}
 		}
-		
+
 		double[, ,] cube = new double[maxSize, maxSize, maxSize];
 
 		// Zero the cube.
