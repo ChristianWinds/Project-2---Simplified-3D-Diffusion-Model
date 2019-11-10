@@ -227,9 +227,25 @@ class diffusion
 				{
 					for (int r = 0; r < maxSize; r++)
 					{
-						maxVal = Math.Max(cube[p, q, r], maxVal);
-						minVal = Math.Min(cube[p, q, r], minVal);
-						sumVal += cube[p, q, r];
+						// If the partition is active,
+						// determine whether the current
+						// array cell is in the
+						// partition to avoid including
+						// the empty partition cells'
+						// gas amounts
+						bool cellInPartition = false;
+
+						if (partition)
+						{
+							cellInPartition = CheckIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
+						}
+
+						if (!cellInPartition)
+						{
+							maxVal = Math.Max(cube[p, q, r], maxVal);
+							minVal = Math.Min(cube[p, q, r], minVal);
+							sumVal += cube[p, q, r];
+						}
 					}
 				}
 			}
