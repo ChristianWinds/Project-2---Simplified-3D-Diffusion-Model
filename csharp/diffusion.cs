@@ -196,8 +196,8 @@ class diffusion
 
 										if (partition)
 										{
-											cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt) ||
-													  checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
+											cellInPartition = CheckIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt) ||
+													  CheckIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
 										}
 
 										if (!cellInPartition)
