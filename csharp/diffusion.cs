@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 class diffusion
 {
-	static void Main(string[] args)
+	static int Main(string[] args)
 	{
 		// Examine the command line arguments to determine the room size
 		// and whether to activate the partition
@@ -152,5 +152,7 @@ class diffusion
 		} while (ratio < 0.99);
 
 		Console.WriteLine($"Box equilibrated in {time} seconds of simulated time.");
+
+		return 0;
 	}
 }
