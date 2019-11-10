@@ -85,12 +85,10 @@ class diffusion
 				if (string.Compare(args[1], "partition") == 0)
 				{
 					partition = true;
-					Console.WriteLine("TEST: Partition activated!");
 				}
 				else
 				{
 					partition = false;
-					Console.WriteLine("TEST: Partition not active.");
 				}
 			}
 		}
