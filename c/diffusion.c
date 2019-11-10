@@ -49,7 +49,7 @@ double min(double num1, double num2)
 	return lowerValue; 
 }
 
-int main()
+int main(int argc, char** argv)
 {
 	const int maxSize = 10;
 	double cube[maxSize][maxSize][maxSize];
