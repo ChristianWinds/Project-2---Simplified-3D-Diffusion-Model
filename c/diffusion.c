@@ -2,6 +2,7 @@
  * Course: CSC 330 Organization of Programming Languages
  * School Year: 2019-2020 School Year */
 #include <stdio.h>
+#include <string.h>
 
 // Checked for mass consistency by Dr. Pounds on 10/25/19
 
