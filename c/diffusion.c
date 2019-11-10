@@ -1,6 +1,7 @@
 /* Programmer: Christian Winds
  * Course: CSC 330 Organization of Programming Languages
  * School Year: 2019-2020 School Year */
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -52,7 +53,11 @@ double min(double num1, double num2)
 
 int main(int argc, char** argv)
 {
+	// Examine the command line arguments to determine the room size
+	// and whether to activate the partition
+	bool partition = false;
 	const int maxSize = 10;
+
 	double cube[maxSize][maxSize][maxSize];
 
 	int i = 0;
