@@ -16,9 +16,10 @@ class diffusion
 {
 	static void Main(string[] args)
 	{
-		// Examine the command line arguments to determine whether to
-		// activate the partition
+		// Examine the command line arguments to determine the room size
+		// and whether to activate the partition
 		bool partition = false;
+		int maxSize = 1;
 
 		// Code from Microsoft,
 		// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
@@ -26,9 +27,23 @@ class diffusion
 		if (args.Length == 0)
 		{
 			partition = false;
+			Console.WriteLine("Please input a room size on the command line.");
+			Console.WriteLine("Ending program...");
+			return 1;
 		}
 		else if (args.Length > 0)
 		{
+			// Test whether a valid room size was entered to
+			// determine whether to continue the program with the
+			// entered room size or end the program
+			bool roomSizeEntered = int.TryParse(args[0], out maxSize);
+			if (!roomSizeEntered)
+			{
+				Console.WriteLine("Please input a room size on the command line.");
+				Console.WriteLine("Ending program...");
+                        	return 1;
+			}
+
 			if (string.Compare(args[1], "partition") == 0)
 			{
 				partition = true;
@@ -39,7 +54,6 @@ class diffusion
 			}
 		}
 		
-		int maxSize = 10;
 		double[, ,] cube = new double[maxSize, maxSize, maxSize];
 
 		// Zero the cube.
