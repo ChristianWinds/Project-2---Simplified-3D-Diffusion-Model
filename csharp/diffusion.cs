@@ -14,6 +14,16 @@ using System.Collections.Generic;
 
 class diffusion
 {
+	bool CellInPartition()
+	{
+		// Precondition: All coordinates received by this method are
+		// valid three-dimensional coordinates, and the received cell
+		// coordinates are valid three-dmensional array cell
+		// coordinates.
+		// Postcondition: A Boolean of whether the received array cell
+		// coordinates were in the specified partition area was returned
+		// to this function's caller.
+	}
 	static int Main(string[] args)
 	{
 		// Examine the command line arguments to determine the room size
