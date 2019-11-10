@@ -189,9 +189,23 @@ class diffusion
 									    ((i == l + 1) && (j == m) && (k == n)) ||
 									    ((i == l - 1) && (j == m) && (k == n)))
 									{
-										double change = (cube[i, j, k] - cube[l, m, n]) * DTerm;
-										cube[i, j, k] = cube[i, j, k] - change;
-										cube[l, m, n] = cube[l, m, n] + change;
+										// If the partition is active, determine whether either current
+										// array cell is in the partition to prevent gas from moving
+										// into the partition.
+										bool cellInPartition = false;
+
+										if (partition)
+										{
+											cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt) ||
+													  checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
+										}
+
+										if (!cellInPartition)
+										{
+											double change = (cube[i, j, k] - cube[l, m, n]) * DTerm;
+											cube[i, j, k] = cube[i, j, k] - change;
+											cube[l, m, n] = cube[l, m, n] + change;
+										}
 									}
 								}
 							}
