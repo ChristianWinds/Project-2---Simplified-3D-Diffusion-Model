@@ -84,7 +84,12 @@ class diffusion
 
 		if (partition)
 		{
+			// Calculate the partition's X coordinates to place the
+			// partition at half the room's length.
+			partitionXMin = maxSize / 2;
+			partitionXMax = partitionXMin + 1;
 
+			// Calculate the
 		}
 
 		double diffusionCoefficient = 0.175;
