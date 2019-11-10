@@ -89,7 +89,15 @@ class diffusion
 			partitionXMin = maxSize / 2;
 			partitionXMax = partitionXMin + 1;
 
-			// Calculate the
+			// Calculate the partition's Y coordinates to place the
+			// partition's width across the room.
+			partitionYMin = 0;
+			partitionYMax = maxSize;
+
+			// Calculate the partition's Z coordinates to set the
+			// partition's height to 75% of the room height
+			partitionZMin = 0;
+			partitionZMax = int(decimal.Round((maxSize * 0.75), MidpointRounding.AwayFromZero));
 		}
 
 		double diffusionCoefficient = 0.175;
