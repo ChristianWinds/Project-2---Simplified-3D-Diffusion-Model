@@ -16,11 +16,27 @@ class diffusion
 {
 	static void Main(string[] args)
 	{
+		// Examine the command line arguments to determine whether to
+		// activate the partition
 		bool partition = false;
 
-		if (string.Compare(args[1], "partition") == 0)
+		// Code from Microsoft,
+		// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
+		// Accessed Sunday, November 10th, 2019
+		if (args.Length == 0)
 		{
-			partition = true;
+			partition = false;
+		}
+		else if (args.Length > 0)
+		{
+			if (string.Compare(args[1], "partition") == 0)
+			{
+				partition = true;
+			}
+			else
+			{
+				partition = false;
+			}
 		}
 		
 		int maxSize = 10;
