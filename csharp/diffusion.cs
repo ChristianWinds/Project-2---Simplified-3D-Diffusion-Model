@@ -31,7 +31,8 @@ class diffusion
 			Console.WriteLine("Ending program...");
 			return 1;
 		}
-		else if (args.Length > 0)
+
+		if (args.Length > 0)
 		{
 			// Test whether a valid room size was entered to
 			// determine whether to continue the program with the
