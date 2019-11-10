@@ -106,6 +106,8 @@ repeat
 
 	ratio = minval / maxval
 
+	cat ("TEST: maxval ==", maxval, "\n")
+
 	cat (time, ratio, sumval, "\n")
 
 	if (!(ratio < 0.99))
