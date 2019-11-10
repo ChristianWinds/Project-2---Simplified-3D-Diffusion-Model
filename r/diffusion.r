@@ -90,8 +90,11 @@ repeat
 				# Create a vector for the max function to
 				# determine the higher read value
 				maxfunctionvector <-c(cube[i, j, k], maxval)
+				cat ("TEST (Third nested for loop set): cube[", i, ",", j, ",", k, "] ==", cube[i, j, k], "\n")
+				cat ("TEST (Third nested for loop set, post-maxfunctionvector creation): maxval ==", maxval, "\n")
 
 				maxval = max(maxfunctionvector)
+				cat ("TEST (Third nested for loop set, post-maxval update):", maxval, "\n")
 
 				# Create a vector for the min function to
 				# determine the lower read value
@@ -106,7 +109,7 @@ repeat
 
 	ratio = minval / maxval
 
-	cat ("TEST: maxval ==", maxval, "\n")
+	cat ("TEST (Post-ratio recalculation): maxval ==", maxval, "\n")
 
 	cat (time, ratio, sumval, "\n")
 
