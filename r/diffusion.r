@@ -29,6 +29,7 @@ DTerm = diffusion_coefficient * timestep / (distance_between_blocks * distance_b
 
 # Initialize the first cell
 cube[0, 0, 0] = 1.0e21
+cat ("TEST (Post-cube first cell initialization): cube[0, 0, 0] ==", cube[0, 0, 0])
 
 pass = 0
 
