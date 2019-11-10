@@ -98,7 +98,7 @@ class diffusion
 			// partition's height to 75% of the room height
 			partitionZMin = 0;
 			double partitionZMaxDouble = maxSize * 0.75;
-			partitionZMaxInt = Decimal.ToInt64(decimal.Round(partitionZMaxDouble, MidpointRounding.AwayFromZero));
+			partitionZMaxInt = Math.Round(partitionZMaxDouble, MidpointRounding.AwayFromZero);
 		}
 
 		double diffusionCoefficient = 0.175;
