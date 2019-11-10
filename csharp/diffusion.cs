@@ -80,7 +80,7 @@ class diffusion
 		int partitionYMin = 0;
 		int partitionYMax = 0;
 		int partitionZMin = 0;
-		int partitionZMax = 0;
+		int partitionZMaxInt = 0;
 
 		if (partition)
 		{
@@ -97,7 +97,8 @@ class diffusion
 			// Calculate the partition's Z coordinates to set the
 			// partition's height to 75% of the room height
 			partitionZMin = 0;
-			partitionZMax = int(decimal.Round((maxSize * 0.75), MidpointRounding.AwayFromZero));
+			double partitionZMaxDouble = maxSize * 0.75;
+			partitionZMaxInt = Decimal.ToInt64(decimal.Round(partitionZMaxDouble, MidpointRounding.AwayFromZero));
 		}
 
 		double diffusionCoefficient = 0.175;
