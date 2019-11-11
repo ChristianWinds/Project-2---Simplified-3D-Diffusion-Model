@@ -117,18 +117,15 @@ int main(int argc, char** argv)
 			if (strcmp(argv[2], "partition") == 0)
 			{
 				partition = true;
-				printf("TEST: Partition activated!\n");
 			}
 			else
 			{
 				partition = false;
-				printf("TEST: Partition not active.\n");
 			}
 		}
 		else
 		{
 			partition = false;
-			printf("TEST: Partition not active.\n");
 		}
 	}
 
