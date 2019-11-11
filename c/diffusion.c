@@ -127,6 +127,24 @@ int main(int argc, char** argv)
 		int partitionZMin = 0;
 		int partitionZMaxInt = 0;
 
+		if (partition)
+		{
+			// Calculate the partition's X coordinates to place the
+			// partition at half the room's length
+			partitionXMin = maxSize / 2;
+			partitionXMax = partitionXMin + 1;
+
+			// Calculate the partition's Y coordinates to place the
+			// partition's width across the room
+			partitionYMin = 0;
+			partitionYMax = maxSize;
+
+			// Calculate the partition's Z coordinates to set the
+			// partition's height to 75% of the room height
+			partitionZMin = 0;
+			double partitionZMaxDouble = maxSize * 0.75;
+		}
+
 		double diffusionCoefficient = 0.175;
 
 		// Create a variable for room dimension to represent 5 meters
