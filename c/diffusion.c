@@ -53,118 +53,137 @@ double min(double num1, double num2)
 
 int main(int argc, char** argv)
 {
+	// Create an input error variable to prevent the full program from
+	// running if an input error is detected
+	bool inputError = false;
+
 	// Examine the command line arguments to determine the room size
 	// and whether to activate the partition
 	bool partition = false;
-	const int maxSize = 10;
+	const int maxSize = 1;
 
-	double cube[maxSize][maxSize][maxSize];
-
-	int i = 0;
-	int j = 0;
-	int k = 0;
-
-	// Zero the cube
-	for (i = 0; i < maxSize; i++)
+	// Code from Microsoft,
+	// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
+	// Accessed Sunday, November 10th, 2019
+	if (argc == 0)
 	{
-		for (j = 0; j < maxSize; j++)
-		{
-			for (k = 0; k < maxSize; k++)
-			{
-				cube[i][j][k] = 0.0;
-			}
-		}
+		inputError = true;
+		printf("Please input a room size on the command line.")
+	}
+	else if (argc > 0)
+	{
+		maxSize = atoi(argv[1]);
 	}
 
-	double diffusionCoefficient = 0.175;
-
-	// Create a variable for room dimension to represent 5 meters
-	double roomDimension = 5;
-
-	// Set a gas molecule speed variable to represent 100 g/mol gas
-	// molecules' speed at room temperature
-	double speedOfGasMolecules = 250.0;
-
-	// Create a timestep variable to represent the value of h in seconds
-	double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
-	double distanceBetweenBlocks = roomDimension / maxSize;
-
-	double DTerm = diffusionCoefficient * timestep /
-		       (distanceBetweenBlocks * distanceBetweenBlocks);
-
-	// Initialize the first cell
-	cube[0][0][0] = 1.0e21;
-
-	int pass = 0;
-
-	// Create a double variable to track increasing system time
-	double time = 0.0;
-
-	double ratio = 0.0;
-
-	int l = 0;
-	int m = 0;
-	int n = 0;
-
-	do
+	if (!inputError)
 	{
+		double cube[maxSize][maxSize][maxSize];
+
+		int i = 0;
+		int j = 0;
+		int k = 0;
+
+		// Zero the cube
 		for (i = 0; i < maxSize; i++)
 		{
 			for (j = 0; j < maxSize; j++)
 			{
 				for (k = 0; k < maxSize; k++)
 				{
-					for (l = 0; l < maxSize; l++)
+					cube[i][j][k] = 0.0;
+				}
+			}
+		}
+
+		double diffusionCoefficient = 0.175;
+
+		// Create a variable for room dimension to represent 5 meters
+		double roomDimension = 5;
+
+		// Set a gas molecule speed variable to represent 100 g/mol gas
+		// molecules' speed at room temperature
+		double speedOfGasMolecules = 250.0;
+
+		// Create a timestep variable to represent the value of h in seconds
+		double timestep = (roomDimension / speedOfGasMolecules) / maxSize;
+		double distanceBetweenBlocks = roomDimension / maxSize;
+
+		double DTerm = diffusionCoefficient * timestep /
+			       (distanceBetweenBlocks * distanceBetweenBlocks);
+
+		// Initialize the first cell
+		cube[0][0][0] = 1.0e21;
+
+		int pass = 0;
+
+		// Create a double variable to track increasing system time
+		double time = 0.0;
+
+		double ratio = 0.0;
+
+		int l = 0;
+		int m = 0;
+		int n = 0;
+
+		do
+		{
+			for (i = 0; i < maxSize; i++)
+			{
+				for (j = 0; j < maxSize; j++)
+				{
+					for (k = 0; k < maxSize; k++)
 					{
-						for (m = 0; m < maxSize; m++)
+						for (l = 0; l < maxSize; l++)
 						{
-							for (n = 0; n < maxSize; n++)
+							for (m = 0; m < maxSize; m++)
 							{
-								if (((i == l) && (j == m) && (k == n + 1)) ||
-								    ((i == l) && (j == m) && (k == n - 1)) ||
-								    ((i == l) && (j == m + 1) && (k == n)) ||
-								    ((i == l) && (j == m - 1) && (k == n)) ||
-								    ((i == l + 1) && (j == m) && (k == n)) ||
-								    ((i == l - 1) && (j == m) && (k == n)))
+								for (n = 0; n < maxSize; n++)
 								{
-									double change = (cube[i][j][k] - cube[l][m][n]) * DTerm;
-									cube[i][j][k] = cube[i][j][k] - change;
-									cube[l][m][n] = cube[l][m][n] + change;
+									if (((i == l) && (j == m) && (k == n + 1)) ||
+									    ((i == l) && (j == m) && (k == n - 1)) ||
+									    ((i == l) && (j == m + 1) && (k == n)) ||
+									    ((i == l) && (j == m - 1) && (k == n)) ||
+									    ((i == l + 1) && (j == m) && (k == n)) ||
+									    ((i == l - 1) && (j == m) && (k == n)))
+									{
+										double change = (cube[i][j][k] - cube[l][m][n]) * DTerm;
+										cube[i][j][k] = cube[i][j][k] - change;
+										cube[l][m][n] = cube[l][m][n] + change;
+									}
 								}
 							}
 						}
 					}
 				}
 			}
-		}
 
-		time = time + timestep;
+			time = time + timestep;
 
-		// Check for mass consistency
-		double sumVal = 0.0;
-		double maxVal = cube[0][0][0];
-		double minVal = cube[0][0][0];
-		for (i = 0; i < maxSize; i++)
-		{
-			for (j = 0; j < maxSize; j++)
+			// Check for mass consistency
+			double sumVal = 0.0;
+			double maxVal = cube[0][0][0];
+			double minVal = cube[0][0][0];
+			for (i = 0; i < maxSize; i++)
 			{
-				for (k = 0; k < maxSize; k++)
+				for (j = 0; j < maxSize; j++)
 				{
-					maxVal = max(cube[i][j][k], maxVal);
-					minVal = min(cube[i][j][k], minVal);
-					sumVal += cube[i][j][k];
+					for (k = 0; k < maxSize; k++)
+					{
+						maxVal = max(cube[i][j][k], maxVal);
+						minVal = min(cube[i][j][k], minVal);
+						sumVal += cube[i][j][k];
+					}
 				}
 			}
-		}
 
-		ratio = minVal / maxVal;
+			ratio = minVal / maxVal;
 
-		printf("%lf %lf %lf\n", time, ratio, sumVal);
+			printf("%lf %lf %lf\n", time, ratio, sumVal);
 
-	} while (ratio < 0.99);
+		} while (ratio < 0.99);
 
-	printf("Box equilibrated in %lf seconds of simulated time.\n", time);
-
+		printf("Box equilibrated in %lf seconds of simulated time.\n", time);
+	}
 	return 0;
 }
 
