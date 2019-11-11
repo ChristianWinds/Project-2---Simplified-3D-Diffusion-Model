@@ -52,6 +52,41 @@ double min(double num1, double num2)
 	return lowerValue; 
 }
 
+bool checkIfCellInPartition(int arrayCellX,
+			    int arrayCellY,
+			    int arrayCellZ,
+			    int partitionXMin,
+			    int partitionXMax,
+			    int partitionYMin,
+			    int partitionYMax,
+			    int partitionZMin,
+			    int partitionZMax)
+{
+	// Precondition: All coordinates received by this method are valid
+	// three-dimensional coordinates, and the received cell  coordinates are
+	// valid three-dimensional array cell coordinates. Each X, Y, and Z
+	// "Min" partition variable value is also less than or equal to the
+	// respective X, Y, and Z "Max" variable value.
+	// Postcondition: A Boolean of whether the received array cell
+	// coordinates were in the specified partition area was returned to this
+	// function's caller.
+
+	bool cellInsidePartition = false;
+
+	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
+	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
+	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
+	{
+		cellInsidePartition = true;
+	}
+	else
+	{
+		cellInsidePartition = false;
+	}
+
+	return cellInsidePartition;
+}
+
 int main(int argc, char** argv)
 {
 	// Create an input error variable to prevent the full program from
