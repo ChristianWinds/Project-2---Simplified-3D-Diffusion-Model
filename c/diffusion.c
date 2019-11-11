@@ -75,16 +75,25 @@ int main(int argc, char** argv)
 	{
 		maxSize = atoi(argv[1]);
 
+		// Check if the word "partition" is a third command line
+		// argument to dtermine whether to activate the partition
 		if (argc > 2)
 		{
 			if (strcmp(argv[2], "partition") == 0)
 			{
 				partition = true;
+				printf("TEST: Partition activated!\n");
 			}
 			else
 			{
 				partition = false;
+				printf("TEST: Partition not active.\n");
 			}
+		}
+		else
+		{
+			partition = false;
+			printf("TEST: Partition not active.\n");
 		}
 	}
 
