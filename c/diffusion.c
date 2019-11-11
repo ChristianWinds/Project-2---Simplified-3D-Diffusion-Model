@@ -66,12 +66,12 @@ int main(int argc, char** argv)
 	// Code from Microsoft,
 	// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
 	// Accessed Sunday, November 10th, 2019
-	if (!(argc > 0))
+	if (argc <= 1)
 	{
 		inputError = true;
 		printf("Please input a room size on the command line.");
 	}
-	else if (argc > 0)
+	else if (argc > 1)
 	{
 		maxSize = atoi(argv[1]);
 	}
