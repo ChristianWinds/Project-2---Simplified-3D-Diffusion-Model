@@ -143,6 +143,14 @@ int main(int argc, char** argv)
 			// partition's height to 75% of the room height
 			partitionZMin = 0;
 			double partitionZMaxDouble = maxSize * 0.75;
+
+			// Code from Carnegie Mellon University,
+			// https://www.cs.cmu.edu/~rbd/papers/cmj-float-to-int.html
+			// Accessed Sunday, November 10th, 2019
+			// Add 0.5 to the partition's maximum Z double value and
+			// truncate the sum to round by using "round away from
+			// zero" method rounding
+			partitionZMaxInt = (int)(partitionZMaxDouble + 0.5);
 		}
 
 		double diffusionCoefficient = 0.175;
