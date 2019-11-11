@@ -60,7 +60,7 @@ int main(int argc, char** argv)
 	// Examine the command line arguments to determine the room size
 	// and whether to activate the partition
 	bool partition = false;
-	const int maxSize = 1;
+	int maxSize = 1;
 
 	// Code from Microsoft,
 	// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
