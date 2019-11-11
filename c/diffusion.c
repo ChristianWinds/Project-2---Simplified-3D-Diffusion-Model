@@ -69,7 +69,7 @@ int main(int argc, char** argv)
 	if (argc <= 1)
 	{
 		inputError = true;
-		printf("Please input a room size on the command line.");
+		printf("Please input a room size on the command line.\n");
 	}
 	else if (argc > 1)
 	{
