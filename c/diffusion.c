@@ -270,9 +270,19 @@ int main(int argc, char** argv)
 				{
 					for (k = 0; k < maxSize; k++)
 					{
-						maxVal = max(cube[i][j][k], maxVal);
-						minVal = min(cube[i][j][k], minVal);
-						sumVal += cube[i][j][k];
+						// If the partition is active,
+						// determine whether the current
+						// array cell is in the partition
+						// to avoid including the empty
+						// array cells' gas amounts
+						bool cellInPartition = false;
+
+						if (!cellInPartition)
+						{
+							maxVal = max(cube[i][j][k], maxVal);
+							minVal = min(cube[i][j][k], minVal);
+							sumVal += cube[i][j][k];
+						}
 					}
 				}
 			}
