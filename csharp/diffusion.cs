@@ -26,7 +26,7 @@ class diffusion
 	{
 		// Precondition: All coordinates received by this method are
 		// valid three-dimensional coordinates, and the received cell
-		// coordinates are valid three-dmensional array cell
+		// coordinates are valid three-dimensional array cell
 		// coordinates. Each X, Y, and Z "Min" partition variable value
 		// is also less than or equal to the respective X, Y, and Z
 		// "Max" variable value.
