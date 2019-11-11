@@ -74,6 +74,18 @@ int main(int argc, char** argv)
 	else if (argc > 1)
 	{
 		maxSize = atoi(argv[1]);
+
+		if (argc > 2)
+		{
+			if (strcmp(argv[2], "partition") == 0)
+			{
+				partition = true;
+			}
+			else
+			{
+				partition = false;
+			}
+		}
 	}
 
 	if (!inputError)
