@@ -3,6 +3,7 @@
  * School Year: 2019-2020 School Year */
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 // Checked for mass consistency by Dr. Pounds on 10/25/19
