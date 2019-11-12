@@ -157,8 +157,8 @@ int main(int argc, char** argv)
 		int partitionXMax = 0;
 		int partitionYMin = 0;
 		int partitionYMax = 0;
-		int partitionZMin = 0;
-		int partitionZMaxInt = 0;
+		int partitionZMinInt = 0;
+		int partitionZMax = 0;
 
 		if (partition)
 		{
@@ -237,8 +237,8 @@ int main(int argc, char** argv)
 
 										if (partition)
 										{
-											cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt) ||
-													  checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
+											cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax) ||
+													  checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 										}
 
 										if (!cellInPartition)
@@ -276,7 +276,7 @@ int main(int argc, char** argv)
 
 						if (partition)
 						{
-							cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
+							cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 						}
 
 						if (!cellInPartition)
