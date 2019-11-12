@@ -12,7 +12,7 @@
 program diffusion
 implicit none
 integer, parameter :: maxSize = 10
-integer :: i, j, k, l, m, n, passes
+integer :: i, j, k, l, m, n
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,&
 &distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue, minValue
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
@@ -45,7 +45,6 @@ DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks *&
 ! Initialize the first cell
 cube(1, 1, 1) = 1.0e21
 
-passes = 0
 time = 0.0
 ratio = 0.0
 
