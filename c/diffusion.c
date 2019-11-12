@@ -198,8 +198,6 @@ int main(int argc, char** argv)
 		// Initialize the first cell
 		cube[0][0][0] = 1.0e21;
 
-		int pass = 0;
-
 		// Create a double variable to track increasing system time
 		double time = 0.0;
 
