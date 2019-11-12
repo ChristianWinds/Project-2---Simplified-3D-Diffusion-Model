@@ -136,7 +136,7 @@ class diffusion
 			// Code from StackOverflow,
 			// https://stackoverflow.com/questions/633335/how-might-i-convert-a-double-to-the-nearest-integer-value
 			// Accessed Sunday, November 10th, 2019
-			partitionZMaxInt = Convert.ToInt32(Math.Floor(partitionZMaxDou)ble);
+			partitionZMaxInt = Convert.ToInt32(Math.Floor(partitionZMaxDouble));
 		}
 
 		double diffusionCoefficient = 0.175;
