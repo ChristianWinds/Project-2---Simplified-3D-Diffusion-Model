@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 // Checked for mass consistency by Dr. Pounds on 10/25/19
 
@@ -173,16 +174,9 @@ int main(int argc, char** argv)
 
 			// Calculate the partition's Z coordinates to set the
 			// partition's height to 75% of the room height
-			partitionZMin = 0;
-			double partitionZMaxDouble = maxSize * 0.75;
-
-			// Code from Carnegie Mellon University,
-			// https://www.cs.cmu.edu/~rbd/papers/cmj-float-to-int.html
-			// Accessed Sunday, November 10th, 2019
-			// Add 0.5 to the partition's maximum Z double value and
-			// truncate the sum to round by using "round away from
-			// zero" method rounding
-			partitionZMaxInt = (int)(partitionZMaxDouble + 0.5);
+			double partitionZMinDouble = maxSize * 0.25;
+			partitionZMinInt = floor(partitionZMinDouble);
+			partitionZMax = maxSize;
 		}
 
 		double diffusionCoefficient = 0.175;
