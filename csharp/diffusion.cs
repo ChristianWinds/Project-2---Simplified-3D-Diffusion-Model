@@ -113,8 +113,8 @@ class diffusion
 		int partitionXMax = 0;
 		int partitionYMin = 0;
 		int partitionYMax = 0;
-		int partitionZMin = 0;
-		int partitionZMaxInt = 0;
+		int partitionZMinInt = 0;
+		int partitionZMax = 0;
 
 		if (partition)
 		{
@@ -130,13 +130,14 @@ class diffusion
 
 			// Calculate the partition's Z coordinates to set the
 			// partition's height to 75% of the room height
-			partitionZMin = 0;
-			double partitionZMaxDouble = maxSize * 0.75;
+			double partitionZMinDouble = maxSize * 0.25;
 
 			// Code from StackOverflow,
 			// https://stackoverflow.com/questions/633335/how-might-i-convert-a-double-to-the-nearest-integer-value
 			// Accessed Sunday, November 10th, 2019
-			partitionZMaxInt = Convert.ToInt32(Math.Floor(partitionZMaxDouble));
+			partitionZMinInt = Convert.ToInt32(Math.Floor(partitionZMinDouble));
+
+			partitionZMax = maxSize;
 		}
 
 		double diffusionCoefficient = 0.175;
@@ -194,8 +195,8 @@ class diffusion
 
 										if (partition)
 										{
-											cellInPartition = CheckIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt) ||
-													  CheckIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
+											cellInPartition = CheckIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax) ||
+													  CheckIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 										}
 
 										if (!cellInPartition)
@@ -235,7 +236,7 @@ class diffusion
 
 						if (partition)
 						{
-							cellInPartition = CheckIfCellInPartition(p, q, r, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMaxInt);
+							cellInPartition = CheckIfCellInPartition(p, q, r, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 						}
 
 						if (!cellInPartition)
