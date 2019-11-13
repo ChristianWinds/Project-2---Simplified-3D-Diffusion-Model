@@ -14,8 +14,12 @@ import "math"
 func main() {
 	// Examine the command line arguments to determine whether to activate
 	// the partition
-	var partition bool = false
+	var partitionFlag bool = false
 	var partitionArgument string = os.Args[2]
+
+	if (partitionArgument == "partition"){
+		partitionFlag = true
+	}
 
 	const maxSize int = 10
 	var cube[maxSize][maxSize][maxSize] float64
