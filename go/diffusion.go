@@ -126,9 +126,11 @@ func main() {
 						cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 					}
 
-					maxVal = math.Max(cube[i][j][k], maxVal)
-					minVal = math.Min(cube[i][j][k], minVal)
-					sumVal += cube[i][j][k]
+					if !(cellInPartition) {
+						maxVal = math.Max(cube[i][j][k], maxVal)
+						minVal = math.Min(cube[i][j][k], minVal)
+						sumVal += cube[i][j][k]
+					}
 				}
 			}
 		}
