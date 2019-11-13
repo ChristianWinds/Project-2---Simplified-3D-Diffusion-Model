@@ -152,4 +152,12 @@ func checkIfCellInPartition (sliceCellX,
 	// Postcondition: A Boolean of whether the received slice cell
 	// coordinates were in the specified partition area was returned to this
 	// function's caller.
+
+	var cellInsidePartition bool = false
+
+	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
+	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
+	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax))) {
+
+	}
 }
