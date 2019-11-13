@@ -29,7 +29,7 @@ func main() {
 	// TEST
 	if (partitionFlag) {
 		fmt.Println("Partition activated!")
-	} else
+	} else {
 		fmt.Println("Partition not active.")
 	}
 
