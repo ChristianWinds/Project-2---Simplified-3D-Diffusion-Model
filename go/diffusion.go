@@ -26,6 +26,15 @@ func main() {
 		}
 	}
 
+	// Calculate coordinates for a partition location if a partition is
+	// active
+	int partitionXMin = 0;
+	int partitionXMax = 0;
+	int partitionYMin = 0;
+	int partitionYMax = 0;
+	int partitionZMinInt = 0;
+	int partitionZMax = 0;
+
 	var diffusionCoefficient float64 = 0.175
 
 	// Create a variable for room dimension to represent 5 meters
