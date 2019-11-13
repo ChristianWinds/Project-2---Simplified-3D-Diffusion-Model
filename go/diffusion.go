@@ -20,7 +20,7 @@ func main() {
 
 	const maxSizeInt, err = strconv.Atoi(maxSizeString)
 
-	const maxSize int = maxSizeInt
+	const maxSize int = 10
 	var cube[maxSize][maxSize][maxSize] float64
 
 	// Zero the cube
