@@ -8,13 +8,14 @@
 package main
 
 import "fmt"
+import "strconv"
 import "os"
 import "math"
 
 func main() {
 	var maxSizeString string = os.Args[1]
 
-	const maxSize int = 10
+	const maxSize int := strconv.Atoi(maxSizeString)
 	var cube[maxSize][maxSize][maxSize] float64
 
 	// Zero the cube
