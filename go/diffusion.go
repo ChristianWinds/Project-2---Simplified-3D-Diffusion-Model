@@ -26,6 +26,13 @@ func main() {
 		}
 	}
 
+	// TEST
+	if (partitionFlag) {
+		fmt.Println("Partition activated!")
+	} else
+		fmt.Println("Partition not active.")
+	}
+
 	const maxSize int = 10
 	var cube[maxSize][maxSize][maxSize] float64
 
