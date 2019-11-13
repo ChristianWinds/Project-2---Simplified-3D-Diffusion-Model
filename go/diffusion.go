@@ -12,7 +12,7 @@ import "os"
 import "math"
 
 func main() {
-	var maxSizeString = os.Args[1]
+	var maxSizeString string = os.Args[1]
 
 	const maxSize int = 10
 	var cube[maxSize][maxSize][maxSize] float64
