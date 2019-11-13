@@ -15,9 +15,10 @@ func main() {
 	// Examine the command line arguments to determine whether to activate
 	// the partition
 	var partitionFlag bool = false
-	var partitionArgument string = os.Args[2]
 
 	if (len(os.Args) > 2) {
+		var partitionArgument string = os.Args[2]
+
 		if (partitionArgument == "partition") {
 			partitionFlag = true
 		} else {
