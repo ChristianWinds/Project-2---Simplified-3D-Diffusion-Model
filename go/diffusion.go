@@ -158,6 +158,12 @@ func checkIfCellInPartition (sliceCellX,
 	if (((sliceCellX >= partitionXMin) && (sliceCellX < partitionXMax)) &&
 	    ((sliceCellY >= partitionYMin) && (sliceCellY < partitionYMax)) &&
 	    ((sliceCellZ >= partitionZMin) && (sliceCellZ < partitionZMax))) {
-
+		cellInsidePartition = true
 	}
+	else
+	{
+		cellInsidePartition = false
+	}
+
+	return cellInsidePartition
 }
