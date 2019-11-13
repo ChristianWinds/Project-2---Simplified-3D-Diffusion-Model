@@ -12,6 +12,9 @@ import "os"
 import "math"
 
 func main() {
+	// Examine the command line arguments to determine whether to activate
+	// the partition
+	var partition bool = false
 	var partitionArgument string = os.Args[2]
 
 	const maxSize int = 10
