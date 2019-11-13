@@ -61,6 +61,17 @@ func main() {
 		// Calculate the partition's X coordinates to place the
 		// partition at half the room's length
 		partitionXMin = maxSize / 2
+		partitionXMax = partitionXMin + 1
+
+		// Calculate the partition's Y coordinates to place the
+		// partition's width across the room
+		partitionYMin = 0
+		partitionYMax = maxSize
+
+		// Calculate the partition's Z coordinates to set the
+		// partition's height to 75% of the room height
+
+		partitionZMax = maxSize
 	}
 
 	var diffusionCoefficient float64 = 0.175
