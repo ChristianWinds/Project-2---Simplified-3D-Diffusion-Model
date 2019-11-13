@@ -116,6 +116,14 @@ func main() {
 		for i := 0; i < int(maxSize); i++ {
 			for j:= 0; j < int(maxSize); j++ {
 				for k := 0; k < int(maxSize); k++ {
+					// If the partition is active, determine
+					// whether the current slice cell is in
+					// the partition to avoid including the
+					// partition cells' gas amounts
+					if (partitionFlag) {
+						cellInPartition = CheckIfCellInPartition(p, q, r, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
+					}
+
 					maxVal = math.Max(cube[i][j][k], maxVal)
 					minVal = math.Min(cube[i][j][k], minVal)
 					sumVal += cube[i][j][k]
