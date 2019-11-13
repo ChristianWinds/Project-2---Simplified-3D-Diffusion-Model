@@ -29,12 +29,12 @@ func main() {
 
 	// Calculate coordinates for a partition location if a partition is
 	// active
-	partitionXMin int = 0
-	partitionXMax int = 0
-	partitionYMin int = 0
-	partitionYMax int = 0
-	partitionZMinInt int = 0
-	partitionZMax int = 0
+	var partitionXMin int = 0
+	var partitionXMax int = 0
+	var partitionYMin int = 0
+	var partitionYMax int = 0
+	var partitionZMinInt int = 0
+	var partitionZMax int = 0
 
 	var diffusionCoefficient float64 = 0.175
 
