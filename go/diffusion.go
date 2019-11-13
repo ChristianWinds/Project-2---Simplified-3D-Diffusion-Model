@@ -121,7 +121,7 @@ func main() {
 					// the partition to avoid including the
 					// partition cells' gas amounts
 					if (partitionFlag) {
-						cellInPartition = CheckIfCellInPartition(p, q, r, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
+						cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 					}
 
 					maxVal = math.Max(cube[i][j][k], maxVal)
