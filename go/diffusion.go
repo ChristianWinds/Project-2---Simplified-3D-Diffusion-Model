@@ -143,7 +143,7 @@ func checkIfCellInPartition (int sliceCellX,
 			     int partitionYMin,
 			     int partitionYMax,
 			     int partitionZMin,
-			     int partitionZMax) bool {
+			     int partitionZMax int) bool {
 	// Precondition: All coordinates received by this method are valid
 	// three-dimensional coordinates, and the received cell coordinates are
 	// valid three-dimensional slice cell coordinates. Each X, Y, and Z
