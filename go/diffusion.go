@@ -18,7 +18,9 @@ func main() {
 	// Accessed Wednesday, November 13th, 2019
 	var maxSizeString string = os.Args[1]
 
-	maxSize, err := strconv.Atoi(maxSizeString)
+	maxSizeInt, err := strconv.Atoi(maxSizeString)
+
+	const maxSize int = maxSizeInt
 	var cube[maxSize][maxSize][maxSize] float64
 
 	// Zero the cube
