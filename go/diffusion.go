@@ -135,15 +135,15 @@ func main() {
 	fmt.Println("Box equilibrated in ", time, " seconds of simulated time.")
 }
 
-func checkIfCellInPartition (int sliceCellX,
-			     int sliceCellY,
-			     int sliceCellZ,
-			     int partitionXMin,
-			     int partitionXMax,
-			     int partitionYMin,
-			     int partitionYMax,
-			     int partitionZMin,
-			     int partitionZMax int) bool {
+func checkIfCellInPartition (sliceCellX,
+			     sliceCellY,
+			     sliceCellZ,
+			     partitionXMin,
+			     partitionXMax,
+			     partitionYMin,
+			     partitionYMax,
+			     partitionZMin,
+			     partitionZMax int) bool {
 	// Precondition: All coordinates received by this method are valid
 	// three-dimensional coordinates, and the received cell coordinates are
 	// valid three-dimensional slice cell coordinates. Each X, Y, and Z
