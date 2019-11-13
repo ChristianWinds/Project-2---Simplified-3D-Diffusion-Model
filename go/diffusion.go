@@ -45,6 +45,12 @@ func main() {
 	var partitionZMinInt int = 0
 	var partitionZMax int = 0
 
+	if (partitionFlag) {
+		// Calculate the partition's X coordinates to place the
+		// partition at half the room's length
+		partitionXMin = maxSize / 2
+	}
+
 	var diffusionCoefficient float64 = 0.175
 
 	// Create a variable for room dimension to represent 5 meters
