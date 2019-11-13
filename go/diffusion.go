@@ -120,6 +120,8 @@ func main() {
 					// whether the current slice cell is in
 					// the partition to avoid including the
 					// partition cells' gas amounts
+					var cellInPartition bool = false
+
 					if (partitionFlag) {
 						cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 					}
