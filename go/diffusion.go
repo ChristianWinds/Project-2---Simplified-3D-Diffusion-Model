@@ -13,12 +13,7 @@ import "os"
 import "math"
 
 func main() {
-	// Code from ADMFactory,
-	// https://www.admfactory.com/how-to-convert-a-string-to-an-int-type-in-golang/
-	// Accessed Wednesday, November 13th, 2019
-	var maxSizeString string = os.Args[1]
-
-	const maxSizeInt, err = strconv.Atoi(maxSizeString)
+	var partitionArgument string = os.Args[2]
 
 	const maxSize int = 10
 	var cube[maxSize][maxSize][maxSize] float64
