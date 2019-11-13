@@ -17,8 +17,12 @@ func main() {
 	var partitionFlag bool = false
 	var partitionArgument string = os.Args[2]
 
-	if (partitionArgument == "partition"){
-		partitionFlag = true
+	if (len(os.Args) > 2) {
+		if (partitionArgument == "partition") {
+			partitionFlag = true
+		} else {
+			partitionFlag = false
+		}
 	}
 
 	const maxSize int = 10
