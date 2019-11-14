@@ -141,7 +141,7 @@ while True:
 				# amounts
 				cellInPartition = False
 
-				if (partition):
+				if (partitionFlag):
 					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)
 
 				if (not (cellInPartition)):
