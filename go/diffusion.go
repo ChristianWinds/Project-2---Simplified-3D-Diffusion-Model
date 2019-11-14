@@ -71,7 +71,7 @@ func main() {
 		// Calculate the partition's Z coordinates to set the
 		// partition's height to 75% of the room height
 		var partitionZMinFloat float64 = float64(maxSize) * 0.25
-		partitionZMinInt = math.Floor(partitionZMinFloat)
+		partitionZMinInt = int(math.Floor(partitionZMinFloat))
 		partitionZMax = maxSize
 	}
 
