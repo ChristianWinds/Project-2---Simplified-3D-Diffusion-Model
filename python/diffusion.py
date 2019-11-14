@@ -40,7 +40,7 @@ def checkifcellInPartition(arraycellx,
 
 	return cellInPartition;
 
-partitionFlag = False
+partitionFlag = True
 maxSize = 10
 
 """ Code citation
