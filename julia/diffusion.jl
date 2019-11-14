@@ -13,7 +13,7 @@
 =#
 
 partitionFlag = false::Bool
-maxsize = 10::Int64
+maxsize = 1::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
 # Zero the cube
@@ -100,6 +100,8 @@ while true
 			end
 		end
 	end
+
+	ratioamount = minval / maxval::Float64
 
 	println(timeamount, " ", ratioamount, " ", sumval)
 
