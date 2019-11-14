@@ -156,4 +156,6 @@ function checkIfCellInPartition()
 	else
 		cellInPartition = false
 	end
+
+	return cellInPartition
 end
