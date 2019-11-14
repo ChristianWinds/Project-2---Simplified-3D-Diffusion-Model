@@ -31,9 +31,9 @@ def checkifcellinpartition(arraycellx,
 
 	cellinpartition = False
 
-	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
-	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
-	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax))):
+	if (((arraycellx >= partitionxmin) .and. (arraycellx < partitionxmax)) .and.
+	    ((arraycelly >= partitionymin) .and. (arraycelly < partitionymax)) .and.
+	    ((arraycellz >= partitionzmin) .and. (arraycellz < partitionzmax))):
 		cellinpartition = True
 	else:
 		cellinpartition = False
@@ -101,7 +101,6 @@ passes = 0
 
 # Create a double variable to track increasing system time
 time = 0.0
-
 
 """ Code citation
 Code from javatpoint,
