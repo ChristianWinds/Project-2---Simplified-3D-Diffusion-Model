@@ -144,7 +144,7 @@ while True:
 				if (partition):
 					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax
 
-				if (not cellInPartition):
+				if (!(cellInPartition)):
 					maxVal = max(cube[i][j][k], maxVal)
 					minVal = min(cube[i][j][k], minVal)
 					sumVal += cube[i][j][k]
