@@ -146,7 +146,7 @@ while True:
 				cellInPartition = False
 
 				if (partitionFlag):
-					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)
+					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax);
 
 				if (not (cellInPartition)):
 					maxVal = max(cube[i][j][k], maxVal)
