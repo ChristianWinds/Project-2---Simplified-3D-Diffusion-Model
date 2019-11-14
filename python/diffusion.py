@@ -130,7 +130,9 @@ while True:
 								cellInPartition = False
 
 								if (partitionFlag):
-									cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax) or checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax)
+									cellAInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
+									cellBInPartition = checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
+									cellInPartition = cellAInPartition or cellBInPartition
 
 								if (not (cellInPartition)):
 									change = (cube[i][j][k] - cube[l][m][n]) * dTerm
