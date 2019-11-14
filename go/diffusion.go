@@ -126,7 +126,7 @@ func main() {
 												  checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
 									}
 
-									if (cellInPartition) {
+									if (!(cellInPartition)) {
 										var change float64 = (cube[i][j][k] - cube[l][m][n]) * dTerm
 										cube[i][j][k] = cube[i][j][k] - change
 										cube[l][m][n] = cube[l][m][n] + change
