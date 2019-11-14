@@ -16,6 +16,7 @@ integer :: i, j, k, l, m, n
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,&
 &distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue, minValue
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
+LOGICAL :: partitionFlag = .FALSE.
 
 ! Zero the cube
 do  i = 1, maxSize
