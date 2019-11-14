@@ -10,6 +10,7 @@ Code from Dr. Pounds,
 Accessed Tuesday, October 29th, 2019
 """
 
+partitionFlag = False
 maxSize = 10
 
 """ Code citation
