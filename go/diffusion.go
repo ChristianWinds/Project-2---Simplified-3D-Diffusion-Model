@@ -121,9 +121,16 @@ func main() {
 								   ((i == l - 1) && (j == m) && (k == n))) {
 									var cellInPartition bool = false
 
-									var change float64 = (cube[i][j][k] - cube[l][m][n]) * dTerm
-									cube[i][j][k] = cube[i][j][k] - change
-									cube[l][m][n] = cube[l][m][n] + change
+									if (partitionFlag) {
+										cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax) ||
+												  checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
+									}
+
+									if (cellInPartition) {
+										var change float64 = (cube[i][j][k] - cube[l][m][n]) * dTerm
+										cube[i][j][k] = cube[i][j][k] - change
+										cube[l][m][n] = cube[l][m][n] + change
+									}
 								}
 							}
 						}
