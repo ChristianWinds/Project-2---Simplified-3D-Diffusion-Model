@@ -11,7 +11,7 @@ Accessed Tuesday, October 29th, 2019
 """
 import math
 
-def checkifcellInPartition(arraycellx,
+def checkIfcellInPartition(arraycellx,
 			   arraycelly,
 			   arraycellz,
 			   partitionxmin,
