@@ -12,7 +12,7 @@
 	Accessed Friday, November 8th, 2019
 =#
 
-partitionFlag = false::Bool
+partitionFlag = true::Bool
 maxsize = 10::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
