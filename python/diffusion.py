@@ -31,9 +31,9 @@ def checkifcellinpartition(arraycellx,
 
 	cellinpartition = False
 
-	if (((arraycellx >= partitionxmin) .and. (arraycellx < partitionxmax)) .and.
-	    ((arraycelly >= partitionymin) .and. (arraycelly < partitionymax)) .and.
-	    ((arraycellz >= partitionzmin) .and. (arraycellz < partitionzmax))):
+	if (((arraycellx >= partitionxmin) and (arraycellx < partitionxmax)) and
+	    ((arraycelly >= partitionymin) and (arraycelly < partitionymax)) and
+	    ((arraycellz >= partitionzmin) and (arraycellz < partitionzmax))):
 		cellinpartition = True
 	else:
 		cellinpartition = False
