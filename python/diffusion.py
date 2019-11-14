@@ -9,6 +9,7 @@ Code from Dr. Pounds,
 /tmp/diffusion.java
 Accessed Tuesday, October 29th, 2019
 """
+import math
 
 partitionFlag = False
 maxSize = 10
@@ -22,6 +23,33 @@ rows, columns, layers = (maxSize, maxSize, maxSize)
 
 # Zero the cube
 cube = [[[0.0 for i in range(layers)] for j in range (columns)] for k in range(rows)]
+
+# Calculate coordinates to determine the partition location if a partition is
+# active
+partitionXMin = 0
+partitionXMax = 0
+partitionYMin = 0
+partitionYMax = 0
+partitionZMin = 0
+partitionZMax = 0
+
+if (partitionFlag)
+{
+	# Calculate the partition's X coordinates to place the partition at half
+	# the room's length 
+	partitionXMin = maxSize // 2
+	partitionXMax = partitionXMin + 1
+
+	# Calculate the partition's Y coordinates to place the partition's width
+	# across the room
+	partitionYMin = 0
+	partitionYMax = maxSize
+
+	# Calculate the partition's Z coordinates to set the partition's height
+	# to 75% of the room height
+	partitionZMin = math.floor(maxSize * 0.25)
+	partitionZMax = maxSize
+}
 
 diffusionCoefficient = 0.175
 
