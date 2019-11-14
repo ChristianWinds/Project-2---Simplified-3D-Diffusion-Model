@@ -120,9 +120,14 @@ while true
 	for i = 1:maxsize
 		for j = 1:maxsize
 			for k = 1:maxsize
-				maxval = max(cube[i, j, k], maxval)::Float64
-				minval = min(cube[i, j, k], minval)::Float64
-				sumval = sumval + cube[i, j, k]::Float64
+				cellInPartition = false::Bool
+				if (partitionFlag)
+					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)::Bool	
+
+				if (!(cellInPartition))
+					maxval = max(cube[i, j, k], maxval)::Float64
+					minval = min(cube[i, j, k], minval)::Float64
+					sumval = sumval + cube[i, j, k]::Float64
 			end
 		end
 	end
@@ -137,7 +142,7 @@ while true
 end
 println("Box equilibrated in ", timeamount, " seconds of simulated time.")
 
-function checkIfCellInPartition()
+function checkIfCellInPartition(arrayCellX, arrayCellY, arrayCellZ, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)
 	# Precondition: All coordinates received by this method are valid
 	# three-dimensional coordinates, and the received cell coordinates are
 	# valid three-dimensional array cell coordinates. Each X, Y, and Z "Min"
