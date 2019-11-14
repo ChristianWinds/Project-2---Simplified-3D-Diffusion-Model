@@ -122,12 +122,14 @@ while true
 			for k = 1:maxsize
 				cellInPartition = false::Bool
 				if (partitionFlag)
-					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)::Bool	
+					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)::Bool
+				end
 
 				if (!(cellInPartition))
 					maxval = max(cube[i, j, k], maxval)::Float64
 					minval = min(cube[i, j, k], minval)::Float64
 					sumval = sumval + cube[i, j, k]::Float64
+				end
 			end
 		end
 	end
