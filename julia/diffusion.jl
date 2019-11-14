@@ -11,7 +11,6 @@
 	/tmp/diffusion.java
 	Accessed Friday, November 8th, 2019
 =#
-using ArgParse
 
 partitionFlag = false::Bool
 maxsize = 10::Int64
