@@ -27,12 +27,12 @@ end
 
 # Calculate coordinates to determine the partition location if a partition is
 # active
-partitionxmin = 0::int64
-partitionxmax = 0::int64
-partitionymin = 0::int64
-partitionymax = 0::int64
-partitionzmin = 0::int64
-partitionzmax = 0::int64
+partitionxmin = 0::Int64
+partitionxmax = 0::Int64
+partitionymin = 0::Int64
+partitionymax = 0::Int64
+partitionzmin = 0::Int64
+partitionzmax = 0::Int64
 
 diffusion_coefficient = 0.175::Float64
 
