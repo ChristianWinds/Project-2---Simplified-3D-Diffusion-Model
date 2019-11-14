@@ -34,7 +34,7 @@ partitionymax = 0::Int64
 partitionzmin = 0::Int64
 partitionzmax = 0::Int64
 
-if (partition)
+if (partitionFlag)
 	# Calculate the partition's X coordinates to place the partition at half
 	# the room's length
 	partitionxmin = maxsize / 2
