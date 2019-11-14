@@ -123,6 +123,11 @@ while True:
 							    ((i == l) and (j == m - 1) and (k == n)) or
 							    ((i == l + 1) and (j == m) and (k == n)) or
 							    ((i == l - 1) and (j == m) and (k == n))):
+								cellInPartition = False
+
+								if (partitionFlag):
+									cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax) or
+											  checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax) 
 								change = (cube[i][j][k] - cube[l][m][n]) * dTerm
 								cube[i][j][k] = cube[i][j][k] - change
 								cube[l][m][n] = cube[l][m][n] + change
