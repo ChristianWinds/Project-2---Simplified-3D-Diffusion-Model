@@ -33,7 +33,7 @@ func main() {
 		fmt.Println("Partition not active.")
 	}
 
-	const maxSize int = 10
+	const maxSize int = 4
 	var cube[maxSize][maxSize][maxSize] float64
 
 	// Zero the cube
