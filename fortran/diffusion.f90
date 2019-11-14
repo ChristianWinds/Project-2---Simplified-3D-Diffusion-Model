@@ -12,6 +12,8 @@
 program diffusion
 implicit none
 integer, parameter :: maxSize = 10
+integer :: partitionXMin, partitionXMax, partitionYMin, partitionYMax,&
+&partitionZMin, partitionZMax
 integer :: i, j, k, l, m, n
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,&
 &distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue, minValue
