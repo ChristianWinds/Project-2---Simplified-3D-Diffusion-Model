@@ -153,5 +153,7 @@ function checkIfCellInPartition()
 	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
 	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
 		cellInPartition = true
+	else
+		cellInPartition = false
 	end
 end
