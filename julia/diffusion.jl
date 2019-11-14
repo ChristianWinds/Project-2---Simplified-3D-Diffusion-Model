@@ -146,4 +146,12 @@ function checkIfCellInPartition()
 	# Postcondition: A Boolean of whether the received array cell
 	# coordinates were in the specified partition area was returned to this
 	# function's caller.
+
+	cellInPartition = false::bool
+
+	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
+	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
+	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
+		cellInPartition = true
+	end
 end
