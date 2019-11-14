@@ -34,6 +34,23 @@ partitionymax = 0::Int64
 partitionzmin = 0::Int64
 partitionzmax = 0::Int64
 
+if (partition)
+	# Calculate the partition's X coordinates to place the partition at half
+	# the room's length
+	partitionxmin = maxsize / 2
+	partitionxmax = partitionxmin + 1
+
+	# Calculate the partition's Y coordinates to place the  partition's
+	# width across the room
+	partitionymin = 0
+	partitionymax = maxsize
+
+	# Calculate the partition's Z coordinates to set the partition's height
+	# to 75% of the room height
+	partitionzmin = floor(Int64, maxsize * 0.25)
+	partitionzmax = maxsize
+end
+
 diffusion_coefficient = 0.175::Float64
 
 # Create a variable for room dimension to represent 5 meters
