@@ -34,7 +34,6 @@ partitionZMin = 0
 partitionZMax = 0
 
 if (partitionFlag):
-{
 	# Calculate the partition's X coordinates to place the partition at half
 	# the room's length 
 	partitionXMin = maxSize // 2
@@ -49,7 +48,6 @@ if (partitionFlag):
 	# to 75% of the room height
 	partitionZMin = math.floor(maxSize * 0.25)
 	partitionZMax = maxSize
-}
 
 diffusionCoefficient = 0.175
 
