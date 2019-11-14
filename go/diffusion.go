@@ -119,6 +119,8 @@ func main() {
 								   ((i == l) && (j == m - 1) && (k == n)) ||
 								   ((i == l + 1) && (j == m) && (k == n)) ||
 								   ((i == l - 1) && (j == m) && (k == n))) {
+									var cellInPartition bool = false
+
 									var change float64 = (cube[i][j][k] - cube[l][m][n]) * dTerm
 									cube[i][j][k] = cube[i][j][k] - change
 									cube[l][m][n] = cube[l][m][n] + change
