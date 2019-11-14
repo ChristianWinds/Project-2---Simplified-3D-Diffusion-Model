@@ -33,7 +33,7 @@ partitionYMax = 0
 partitionZMin = 0
 partitionZMax = 0
 
-if (partitionFlag)
+if (partitionFlag):
 {
 	# Calculate the partition's X coordinates to place the partition at half
 	# the room's length 
