@@ -11,7 +11,7 @@ Accessed Tuesday, October 29th, 2019
 """
 import math
 
-def checkifcellinpartition(arraycellx,
+def checkifcellInPartition(arraycellx,
 			   arraycelly,
 			   arraycellz,
 			   partitionxmin,
@@ -29,16 +29,16 @@ def checkifcellinpartition(arraycellx,
 	# coordinates were in the specified partition area was returned to this
 	# function's caller.
 
-	cellinpartition = False
+	cellInPartition = False
 
 	if (((arraycellx >= partitionxmin) and (arraycellx < partitionxmax)) and
 	    ((arraycelly >= partitionymin) and (arraycelly < partitionymax)) and
 	    ((arraycellz >= partitionzmin) and (arraycellz < partitionzmax))):
-		cellinpartition = True
+		cellInPartition = True
 	else:
-		cellinpartition = False
+		cellInPartition = False
 
-	return cellinpartition;
+	return cellInPartition;
 
 partitionFlag = False
 maxSize = 10
@@ -135,9 +135,19 @@ while True:
 	for i in range (maxSize):
 		for j in range (maxSize):
 			for k in range (maxSize):
-				maxVal = max(cube[i][j][k], maxVal)
-				minVal = min(cube[i][j][k], minVal)
-				sumVal += cube[i][j][k]
+				# If the partition is active, determine whether
+				# the current array cell is in the partition to
+				# avoid including the empty partition cells' gas
+				# amounts
+				cellInPartition = False
+
+				if (partition):
+					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax
+
+				if (not (cellInPartition)):
+					maxVal = max(cube[i][j][k], maxVal)
+					minVal = min(cube[i][j][k], minVal)
+					sumVal += cube[i][j][k]
 
 	ratio = float(minVal) / float(maxVal)
 
