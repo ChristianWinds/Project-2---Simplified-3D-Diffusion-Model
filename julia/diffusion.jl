@@ -25,6 +25,9 @@ for i = 1:maxsize
 	end
 end
 
+# Calculate coordinates to determine the partition location if a partition is
+# active
+
 diffusion_coefficient = 0.175::Float64
 
 # Create a variable for room dimension to represent 5 meters
