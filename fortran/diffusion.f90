@@ -29,6 +29,18 @@ do  i = 1, maxSize
         end do
 end do
 
+! Calculate coordinates to determine the partition location if a partition is
+! active
+if (partitionFlag) then
+        partitionXMin = maxSize / 2
+        partitionXMax = partitionXMin + 1
+        partitionYMin = 0
+        partitionYMax = maxSize
+        partitionZMin = floor(maxSize * 0.25)
+        partitionZMax = maxSize
+endif
+
+
 diffusionCoefficient = 0.175
 
 ! Create a variable for room dimension to represent 5 meters
