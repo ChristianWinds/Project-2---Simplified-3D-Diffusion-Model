@@ -123,13 +123,19 @@ while True:
 							    ((i == l) and (j == m - 1) and (k == n)) or
 							    ((i == l + 1) and (j == m) and (k == n)) or
 							    ((i == l - 1) and (j == m) and (k == n))):
+								# If the partition is active, determine
+								# whether either current array cell is
+								# in the partition to prevent gas from
+								# moving into the partition
 								cellInPartition = False
 
 								if (partitionFlag):
 									cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax) or checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax)
-								change = (cube[i][j][k] - cube[l][m][n]) * dTerm
-								cube[i][j][k] = cube[i][j][k] - change
-								cube[l][m][n] = cube[l][m][n] + change
+
+								if (not (cellInPartition)):
+									change = (cube[i][j][k] - cube[l][m][n]) * dTerm
+									cube[i][j][k] = cube[i][j][k] - change
+									cube[l][m][n] = cube[l][m][n] + change
 	time = time + timestep
 
 	# Check for mass consistency
@@ -141,7 +147,7 @@ while True:
 			for k in range (maxSize):
 				# If the partition is active, determine whether
 				# the current array cell is in the partition to
-				# avoid including the empty partition cells' gas
+				# avoid including the partition cells' gas
 				# amounts
 				cellInPartition = False
 
