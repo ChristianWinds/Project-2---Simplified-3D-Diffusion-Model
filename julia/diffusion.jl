@@ -13,7 +13,7 @@
 =#
 
 partitionFlag = false::Bool
-maxsize = 1::Int64
+maxsize = 4::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
 # Zero the cube
