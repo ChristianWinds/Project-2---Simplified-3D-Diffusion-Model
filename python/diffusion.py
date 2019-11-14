@@ -32,7 +32,7 @@ def checkIfCellInPartition(arraycellx, arraycelly, arraycellz, partitionxmin, pa
 
 	return cellInPartition;
 
-partitionFlag = True
+partitionFlag = False
 maxSize = 10
 
 """ Code citation
