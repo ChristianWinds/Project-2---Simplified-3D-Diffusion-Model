@@ -122,8 +122,8 @@ while True:
 								cellInPartition = False
 
 								if (partitionFlag):
-									cellAInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
-									cellBInPartition = checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt, partitionZMax);
+									cellAInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax);
+									cellBInPartition = checkIfCellInPartition(l, m, n, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax);
 									cellInPartition = cellAInPartition or cellBInPartition
 
 								if (not (cellInPartition)):
