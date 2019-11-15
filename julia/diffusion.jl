@@ -137,7 +137,8 @@ while true
 								cellinpartition = false::Bool
 
 								if (partitionflag)
-									cellinpartition = (checkIfCellInPartition(i, j, k, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)) || (checkIfCellInPartition(l, m, n, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax))::Bool
+									cellinpartition = (checkIfCellInPartition(i, j, k, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)) ||
+											  (checkIfCellInPartition(l, m, n, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax))::Bool
 								end
 
 								if (!(cellinpartition))
