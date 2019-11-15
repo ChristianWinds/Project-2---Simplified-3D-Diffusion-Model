@@ -4,7 +4,7 @@
 
 ! Code from Dr. Pounds,
 ! /tmp/diffusion.java
-! Accessed October 15th, 2019
+! Accessed Tuesday, October 15th, 2019
 
 ! Checked for mass consistency on 10/20/19 by Dr. Pounds
  
