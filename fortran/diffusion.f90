@@ -132,4 +132,18 @@ function check_if_cell_in_partition(arrayCellX,&
 ! Postcondition: A Boolean of whether the received array cell coordinates were
 ! in the specified partition area was returned to this function's caller.
 
+implicit none
+
+        LOGICAL :: cell_in_partition
+       
+        integer :: arrayCellX
+        integer :: arrayCellY
+        integer :: arrayCellZ
+        integer :: partitionXMin
+        integer :: partitionXMax
+        integer :: partitionYMin
+        integer :: partitionYMax
+        integer :: partitionZMin
+        integer :: partitionZMax
+        
 end function check_if_cell_in_partition
