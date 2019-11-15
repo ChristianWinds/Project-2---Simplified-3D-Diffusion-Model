@@ -63,8 +63,8 @@ bool checkIfCellInPartition(int arrayCellX,
 			    int partitionZMin,
 			    int partitionZMax)
 {
-	// Precondition: All coordinates received by this method are valid
-	// three-dimensional coordinates, and the received cell  coordinates are
+	// Precondition: All coordinates received by this function are valid
+	// three-dimensional coordinates, and the received cell coordinates are
 	// valid three-dimensional array cell coordinates. Each X, Y, and Z
 	// "Min" partition variable value is also less than or equal to the
 	// respective X, Y, and Z "Max" variable value.
@@ -74,6 +74,8 @@ bool checkIfCellInPartition(int arrayCellX,
 
 	bool cellInsidePartition = false;
 
+	// Compare the array cell coordinates and partition cell coordinates to
+	// determine whether the array cell exists within the partition
 	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
 	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
 	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
@@ -94,8 +96,8 @@ int main(int argc, char** argv)
 	// running if an input error is detected
 	bool inputError = false;
 
-	// Examine the command line arguments to determine the room size
-	// and whether to activate the partition
+	// Examine the command line arguments to determine the number of room
+	// divisions and whether to activate the partition
 	bool partition = false;
 	int maxSize = 1;
 
@@ -105,14 +107,14 @@ int main(int argc, char** argv)
 	if (argc <= 1)
 	{
 		inputError = true;
-		printf("Please input a room size on the command line.\n");
+		printf("Please input a number of room divisions on the command line.\n");
 	}
 	else if (argc > 1)
 	{
 		maxSize = atoi(argv[1]);
 
 		// Check if the word "partition" is a third command line
-		// argument to dtermine whether to activate the partition
+		// argument to determine whether to activate the partition
 		if (argc > 2)
 		{
 			if (strcmp(argv[2], "partition") == 0)
@@ -267,9 +269,10 @@ int main(int argc, char** argv)
 					{
 						// If the partition is active,
 						// determine whether the current
-						// array cell is in the partition
-						// to avoid including the empty
-						// array cells' gas amounts
+						// array cell is in the
+						// partition to avoid including
+						// the partition cells' gas
+						// amounts
 						bool cellInPartition = false;
 
 						if (partition)
@@ -297,4 +300,3 @@ int main(int argc, char** argv)
 	}
 	return 0;
 }
-
