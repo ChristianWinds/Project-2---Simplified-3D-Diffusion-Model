@@ -6,12 +6,6 @@
 	School Year: 2019-2020 School Year
 =#
 
-#=
-	Code from Dr. Pounds,
-	/tmp/diffusion.java
-	Accessed Friday, November 8th, 2019
-=#
-
 function checkIfCellInPartition(arraycellx,
 				arraycelly,
 				arraycellz,
@@ -46,6 +40,12 @@ function checkIfCellInPartition(arraycellx,
 end
 
 partitionflag = false::Bool
+
+#=
+	Code from Dr. Pounds,
+	/tmp/diffusion.java
+	Accessed Friday, November 8th, 2019
+=#
 maxsize = 10::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
