@@ -96,6 +96,10 @@ int main(int argc, char** argv)
 	// running if an input error is detected
 	bool inputError = false;
 
+	// Code from Dr. Pounds,
+	// /tmp/diffusion.java
+	// Accessed 2019
+
 	// Examine the command line arguments to determine the number of room
 	// divisions and whether to activate the partition
 	bool partition = false;
