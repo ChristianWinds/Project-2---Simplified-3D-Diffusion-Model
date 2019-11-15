@@ -12,4 +12,3 @@
   Accessed Saturday, November 9th, 2019
 |#
 (defvar maxSize 10)
-(setf cube (make-array '(maxSize maxSize maxSize)))
