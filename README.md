@@ -11,12 +11,13 @@ both the specified number of room divisions and a partition. The partition's
 height will be the height of 75% of the room's vertical divisions, floored to
 the nearest room division integer less than or equal to the 75% height.
 C# compilation instructions: Enter "mcs diffusion.cs" in the command line.
-C# execution instructions: Enter "mono diffusion.exe (positive room size
-integer)" in the command line to run the program with the specified room size
-and without a partition. Enter "mono diffusion.exe (positive room size integer)
-partition" in the command line to run the program with both the specified room
-size and a partition. The partition's height will be 75% of the room's height,
-floored to the nearest integer less than or equal to the 75% height.
+C# execution instructions: Enter "mono diffusion.exe (positive room divisions
+integer)" in the command line to run the program with the specified number of
+room divisions and without a partition. Enter "mono diffusion.exe (positive room
+divisions integer) partition" in the command line to run the program with both
+the specified number of room divisions and a partition. The partition's height
+will be 75% of the room's vertical divisions' total height, floored to the
+nearest room division integer less than or equal to the 75% height.
 Python compilation instructions:
 Python execution instructions:
 Fortran compilation instructions: With both checkIfCellInPartitionModule.f90 and
