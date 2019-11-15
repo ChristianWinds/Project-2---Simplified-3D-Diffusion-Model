@@ -97,9 +97,11 @@ do while (ratio < 0.99)
 &partitionYMin, partitionYMax, partitionZMin, partitionZMax))
                                 endif
 
-                                change = (cube(i, j, k) - cube(l, m, n)) * DTerm
-                                cube(i, j, k) = cube(i, j, k) - change
-                                cube(l, m, n) = cube(l, m, n) + change
+                                if (.not.(cell_in_partition)) then
+                                        change = (cube(i, j, k) - cube(l, m, n)) * DTerm
+                                        cube(i, j, k) = cube(i, j, k) - change
+                                        cube(l, m, n) = cube(l, m, n) + change
+                                endif
                             end if
                         end do
                     end do
