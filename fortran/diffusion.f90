@@ -145,5 +145,18 @@ implicit none
         integer :: partitionYMax
         integer :: partitionZMin
         integer :: partitionZMax
-        
+
+        cell_in_partition = .FALSE.
+
+        if (((arrayCellX >= partitionXMin) .and.&
+           &(arrayCellX < partitionXMax)) .and.&
+           &((arrayCellY >= partitionYMin) .and.&
+           &(arrayCellY < partitionYMax)) .and.&
+           &((arrayCellZ >= partitionZMin) .and.&
+           &(arrayCellZ < partitionZMax))) then
+                cell_in_partition = .TRUE.
+        else
+                cell_in_partition = .FALSE.
+        endif
+
 end function check_if_cell_in_partition
