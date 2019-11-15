@@ -22,7 +22,7 @@ function checkIfCellInPartition(arraycellx, arraycelly, arraycellz, partitionxmi
 	# coordinates were in the specified partition area was returned to this
 	# function's caller.
 
-	cellinpartition = false::bool
+	cellinpartition = false::Bool
 
 	if (((arraycellx >= partitionxmin) && (arraycellx < partitionxmax)) &&
 	    ((arraycelly >= partitionymin) && (arraycelly < partitionymax)) &&
