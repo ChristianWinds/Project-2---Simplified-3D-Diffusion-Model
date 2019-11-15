@@ -43,7 +43,7 @@ function checkIfCellInPartition(arraycellx,
 	return cellinpartition
 end
 
-partitionflag = true::Bool
+partitionflag = false::Bool
 maxsize = 10::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
