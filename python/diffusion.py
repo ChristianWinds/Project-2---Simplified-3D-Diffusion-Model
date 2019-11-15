@@ -105,7 +105,7 @@ ratio = 0.0
 
 # Use a while True loop to simulate the beginning of a do while loop
 while True:
-	# Iterate through the cube to diffuse gas through the room
+	# Iterate through the cube's cells to diffuse gas through the room
 	for i in range (maxSize):
 		for j in range (maxSize):
 			for k in range (maxSize):
