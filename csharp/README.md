@@ -4,4 +4,4 @@ integer)" in the command line to run the program with the specified room size
 and without a partition. Enter "mono diffusion.exe (positive room size integer)
 partition" in the command line to run the program with both the specified room
 size and a partition. The partition's height will be 75% of the room's height,
-rounded to the nearest integer.
+floored to the nearest integer less than or equal to the 75% height.
