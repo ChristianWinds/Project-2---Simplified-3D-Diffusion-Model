@@ -12,17 +12,19 @@ Accessed Tuesday, October 29th, 2019
 import math
 
 def checkIfCellInPartition(arraycellx, arraycelly, arraycellz, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax):
-	# Precondition: All coordinates received by this method are valid
+	# Precondition: All coordinates received by this function are valid
 	# three-dimensional coordinates, and the received cell coordinates are
-	# valid three-dimensional array cell coordinates. Each X, Y, and Z "Min"
+	# valid three-dimensional array cell coordinates. Each X, Y, and Z "min"
 	# partition variable value is also less than or equal to the respective
-	# X, Y, and Z "Max" variable value.
+	# X, Y, and Z "max" variable value.
 	# Postcondition: A Boolean of whether the received array cell
 	# coordinates were in the specified partition area was returned to this
 	# function's caller.
 
 	cellInPartition = False
 
+	# Compare the array cell coordinates and partition cell coordinates to
+	# determine whether the array cell exists within the partition
 	if (((arraycellx >= partitionxmin) and (arraycellx < partitionxmax)) and
 	    ((arraycelly >= partitionymin) and (arraycelly < partitionymax)) and
 	    ((arraycellz >= partitionzmin) and (arraycellz < partitionzmax))):
