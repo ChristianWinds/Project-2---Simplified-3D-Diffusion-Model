@@ -69,7 +69,9 @@ DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks *&
 ! Initialize the first cell
 cube(1, 1, 1) = 1.0e21
 
+! Create a variable to track increasing system time
 time = 0.0
+
 ratio = 0.0
 
 do while (ratio < 0.99)
