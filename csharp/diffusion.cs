@@ -32,10 +32,13 @@ class diffusion
 		// "Max" variable value.
 		// Postcondition: A Boolean of whether the received array cell
 		// coordinates were in the specified partition area was returned
-		// to this function's caller.
+		// to this method's caller.
 
 		bool cellInsidePartition = false;
 
+		// Compare the array cell coordinates and partition cell
+		// coordinates to determine whether the array cell exists within
+		// the partition.
 		if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
 		    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
 		    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
@@ -52,8 +55,8 @@ class diffusion
 
 	static int Main(string[] args)
 	{
-		// Examine the command line arguments to determine the room size
-		// and whether to activate the partition
+		// Examine the command line arguments to determine the number of
+		// room divisions and whether to activate the partition.
 		bool partition = false;
 		int maxSize = 1;
 
@@ -63,23 +66,27 @@ class diffusion
 		if (args.Length == 0)
 		{
 			partition = false;
-			Console.WriteLine("Please input a room size on the command line.");
+			Console.WriteLine("Please input a number of room divisions on the command line.");
 			Console.WriteLine("Ending program...");
 			return 1;
 		}
 		else if (args.Length > 0)
 		{
-			// Test whether a valid room size was entered to
-			// determine whether to continue the program with the
-			// entered room size or end the program
+			// Test whether a valid room division integer was
+			// entered to determine whether to continue the program
+			// with the entered number of room divisions or end the
+			// program.
 			bool roomSizeEntered = int.TryParse(args[0], out maxSize);
 			if (!roomSizeEntered)
 			{
-				Console.WriteLine("Please input a room size on the command line.");
+				Console.WriteLine("Please input a number of room divisions on the command line.");
 				Console.WriteLine("Ending program...");
                         	return 1;
 			}
 
+			// Check whether the second command line argument is
+			// "partition" to determine whether to activate the
+			// partition.
 			if (args.Length >= 2)
 			{
 				if (string.Compare(args[1], "partition") == 0)
@@ -129,7 +136,7 @@ class diffusion
 			partitionYMax = maxSize;
 
 			// Calculate the partition's Z coordinates to set the
-			// partition's height to 75% of the room height
+			// partition's height to 75% of the room height.
 			double partitionZMinDouble = maxSize * 0.25;
 
 			// Code from StackOverflow,
