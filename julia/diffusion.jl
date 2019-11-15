@@ -101,8 +101,6 @@ dterm = (diffusion_coefficient * timestep / (distance_between_blocks * distance_
 # Initialize the first cell
 cube[1, 1, 1] = 1.0e21::Float64
 
-pass = 0::Int64
-
 # Create a variable to track increasing system time
 timeamount = 0.0::Float64
 
