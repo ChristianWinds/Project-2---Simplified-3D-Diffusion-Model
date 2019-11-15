@@ -18,6 +18,7 @@ real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,&
 &distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue, minValue
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 LOGICAL :: partitionFlag = .FALSE.
+LOGICAL :: cellInPartition = .FALSE.
 
 ! Zero the cube
 do  i = 1, maxSize
@@ -61,7 +62,7 @@ timestep = (roomDimension / speedOfGasMolecules) / maxSize
 distanceBetweenBlocks = roomDimension / maxSize
 
 DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks *&
-&distanceBetweenBlocks)
+        &distanceBetweenBlocks)
 
 ! Initialize the first cell
 cube(1, 1, 1) = 1.0e21
@@ -148,6 +149,8 @@ implicit none
 
         cell_in_partition = .FALSE.
 
+        ! Compare the array cell coordinates and partition cell coordinates to
+        ! determine whether the array cell exists within the partition
         if (((arrayCellX >= partitionXMin) .and.&
            &(arrayCellX < partitionXMax)) .and.&
            &((arrayCellY >= partitionYMin) .and.&
