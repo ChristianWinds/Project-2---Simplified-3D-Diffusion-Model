@@ -211,6 +211,7 @@ int main(int argc, char** argv)
 
 		do
 		{
+			// Iterate through the cube's cells to diffuse the gas through the room
 			for (i = 0; i < maxSize; i++)
 			{
 				for (j = 0; j < maxSize; j++)
