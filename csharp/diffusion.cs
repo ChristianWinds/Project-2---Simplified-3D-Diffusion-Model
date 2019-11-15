@@ -173,7 +173,8 @@ class diffusion
 
 		do
 		{
-			// Iterate through the cube's cells to diffuse the gas through the room.
+			// Iterate through the cube's cells to diffuse the gas
+			// through the room.
 			for (int i = 0; i < maxSize; i++)
 			{
 				for (int j = 0; j < maxSize; j++)
