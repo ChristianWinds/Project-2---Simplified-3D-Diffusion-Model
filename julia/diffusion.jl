@@ -21,7 +21,7 @@ function checkIfCellInPartition(arraycellx,
 				partitionymax,
 				partitionzmin,
 				partitionzmax)
-	# Precondition: All coordinates received by this method are valid
+	# Precondition: All coordinates received by this function are valid
 	# three-dimensional coordinates, and the received cell coordinates are
 	# valid three-dimensional array cell coordinates. Each X, Y, and Z "min"
 	# partition variable value is also less than or equal to the respective
@@ -32,6 +32,8 @@ function checkIfCellInPartition(arraycellx,
 
 	cellinpartition = false::Bool
 
+	# Compare the array cell coordinates and partition cell coordinates to
+	# determine whether the array cell exists within the partition
 	if (((arraycellx >= partitionxmin) && (arraycellx < partitionxmax)) &&
 	    ((arraycelly >= partitionymin) && (arraycelly < partitionymax)) &&
 	    ((arraycellz >= partitionzmin) && (arraycellz < partitionzmax)))
@@ -115,6 +117,7 @@ ratioamount = 0.0::Float64
 	Accessed Saturday, November 9th, 2019
 =#
 while true
+	# Iterate through the cube's cells to diffuse the gas through the room
 	for i = 1:maxsize
 		for j = 1:maxsize
 			for k = 1:maxsize
