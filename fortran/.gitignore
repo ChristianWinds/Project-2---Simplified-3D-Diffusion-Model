@@ -1,5 +1,8 @@
 # ignore .out executable files
 *.out
 
+# ignore .mod module files
+*.mod
+
 # ignore .swp files
 *.swp
