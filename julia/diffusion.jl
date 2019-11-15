@@ -121,6 +121,17 @@ while true
 							    ((i == l) && (j == m - 1) && (k == n)) ||
 							    ((i == l + 1) && (j == m) && (k == n)) ||
 							    ((i == l - 1) && (j == m) && (k == n)))
+								# If the partition is active,
+								# determine whether either current
+								# array cell is in the partition to
+								# prevent gas from moving into the
+								# partition
+								cellinpartition = false::Bool
+
+								if (partitionFlag)
+									cellinpartition = (checkIfCellInPartition(i, j, k, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)) || (checkIfCellInPartition(l, m, n, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax))::Bool
+								end
+
 								change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
 								cube[i, j, k] = (cube[i, j, k] - change)::Float64
 								cube[l, m, n] = (cube[l, m, n] + change)::Float64
@@ -143,6 +154,10 @@ while true
 	for i = 1:maxsize
 		for j = 1:maxsize
 			for k = 1:maxsize
+				# If the partition is active, determine whether
+				# the current array cell is in the partition to
+				# avoid including the partition cells' gas
+				# amounts
 				cellinpartition = false::Bool
 				if (partitionFlag)
 					cellinpartition = checkIfCellInPartition(i, j, k, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)::Bool
