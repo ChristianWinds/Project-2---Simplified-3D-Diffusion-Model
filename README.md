@@ -18,31 +18,32 @@ divisions integer) partition" in the command line to run the program with both
 the specified number of room divisions and a partition. The partition's height
 will be 75% of the room's vertical divisions' total height, floored to the
 nearest room division integer less than or equal to the 75% height.
+Fortran compilation instructions: Before compiling the diffusion.90 program,
+change the maxSize variable in the diffusion.90 source code to set the number
+of room divisions for the program, and set the diffusion.90 source code's
+partitionFlag variable to ".FALSE." to prepare diffusion.90 to compile without
+a partition, or set the partitionFlag variable to ".TRUE." to prepare
+diffusion.90 to compile with a partition. With both
+checkIfCellInPartitionModule.f90 and diffusion.f90 in the same directory, enter
+the command "gfortran checkIfCellInPartitionModule.f90 diffusion.f90" in the
+command line to compile the source code necessary to run the diffusion.f90
+program.
+Fortran execution instructions: With the files checkifcellinpartitionmodule.mod
+and a.out, each created from compilng checkIfCellInPartitionModule.f90 and
+diffusion.f90, within the current directory, enter "a.out" in the command line
+to run the diffusion.f90 program.
+Go compilation instructions: diffusion.go does not require a compilation
+command.
+Go execution instructions: Within the diffusion.go source code, change the
+maxSize integer to set the number of room divisions to use in the diffusion.go
+program execution. Enter "go run diffusion.go" upon the command line to run the
+program without a partition, or enter "go run diffusion.go (any argument)
+partition" to run the program with an active partition.
 Python compilation instructions:
 Python execution instructions:
-Fortran compilation instructions: With both checkIfCellInPartitionModule.f90 and
-diffusion.f90 in the same directory, enter the command "gfortran
-checkIfCellInPartitionModule.f90 diffusion.f90" to compile the source code
-necessary to run the diffusion.f90 program.
-Fortran execution instructions: In the diffusion.f90 source code, change the
-maxSize integer to alter the number of division used in the program's room, and
-set the partitionFlag variable in the source code to ".FALSE." to prepare
-diffusion.f90 to run without a partition, or set partitionFlag to ".TRUE." to
-prepare the program to run with a partition. With the files
-checkifcellinpartitionmodule.mod and a.out, each created from compilng
-checkIfCellInPartitionModule.f90 and diffusion.f90, in the current directory,
-enter a.out in the command line to run the diffusion.f90 program.
 Julia compilation instructions:
 Julia execution instructions:
 R compilation instructions:
 R execution instructions:
-Go compilation instructions: diffusion.go does not require a compilation
-command.
-Go execution instructions: Enter "go run diffusion.go" upon the command line to
-run the program without a partition, or enter "go run diffusion.go (argument)
-partition" to run the program with an active partition. The argument entered as
-"argument" does not affect the maximum room size; the maximum room size is
-instead changed by editing the value of "maxSize" within the diffusion.go source
-code before running diffusion.go.
 Lisp compilation instructions:
 Lisp execution instructions:
