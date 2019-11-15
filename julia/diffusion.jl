@@ -13,7 +13,14 @@
 =#
 
 function checkIfCellInPartition(arraycellx,
-				arraycelly, arraycellz, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)
+				arraycelly,
+				arraycellz,
+				partitionxmin,
+				partitionxmax,
+				partitionymin,
+				partitionymax,
+				partitionzmin,
+				partitionzmax)
 	# Precondition: All coordinates received by this method are valid
 	# three-dimensional coordinates, and the received cell coordinates are
 	# valid three-dimensional array cell coordinates. Each X, Y, and Z "Min"
