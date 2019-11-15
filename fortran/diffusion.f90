@@ -115,7 +115,15 @@ end do
 print *, 'Box equilibrated in ', time, ' seconds of simulated time.'
 end program diffusion
 
-function check_if_cell_in_partition(arrayCellX, arrayCellY, arrayCellZ, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax) result (cell_in_partition)
+function check_if_cell_in_partition(arrayCellX,&
+                                   &arrayCellY,&
+                                   &arrayCellZ,&
+                                   &partitionXMin,&
+                                   &partitionXMax,&
+                                   &partitionYMin,&
+                                   &partitionYMax,&
+                                   &partitionZMin,&
+                                   &partitionZMax) result (cell_in_partition)
 ! Precondition: All coordinates received by this function are valid
 ! three-dimensional coordinates, and the received cell coordinates are valid
 ! three-dimensional array cell coordinates. Each X, Y, and Z "Min" partition
