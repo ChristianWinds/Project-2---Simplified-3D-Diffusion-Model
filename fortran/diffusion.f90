@@ -18,7 +18,7 @@ integer :: i, j, k, l, m, n
 real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,&
 &distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue, minValue
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
-LOGICAL :: partitionFlag = .FALSE.
+LOGICAL :: partitionFlag = .TRUE.
 LOGICAL :: cell_in_partition = .FALSE.
 
 ! Zero the cube
@@ -114,9 +114,11 @@ do while (ratio < 0.99)
 &partitionZMax) 
                 endif
 
-                maxValue = maxval(cube)
-                minValue = minval(cube)
-                sumVal = sumVal + cube(i, j, k)
+                if (.not.(cell_in_partition))
+                        maxValue = maxval(cube)
+                        minValue = minval(cube)
+                        sumVal = sumVal + cube(i, j, k)
+                endif
             end do
         end do
     end do
