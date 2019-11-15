@@ -18,7 +18,7 @@ real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,&
 &distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue, minValue
 real, DIMENSION(maxSize, maxSize, maxSize) :: cube
 LOGICAL :: partitionFlag = .FALSE.
-LOGICAL :: cellInPartition = .FALSE.
+LOGICAL :: cell_in_partition = .FALSE.
 
 ! Zero the cube
 do  i = 1, maxSize
@@ -102,6 +102,13 @@ do while (ratio < 0.99)
     do i = 1, maxSize, 1
         do j = 1, maxSize, 1
             do k = 1, maxSize, 1
+                ! If the partition is active, determine whether the current array
+                ! cell is in the partition to avoid including the partition
+                ! cells' gas amounts
+                cell_in_partition = .FALSE.
+
+                if (partitionFlag) then
+                endif
                 maxValue = maxval(cube)
                 minValue = minval(cube)
                 sumVal = sumVal + cube(i, j, k)
