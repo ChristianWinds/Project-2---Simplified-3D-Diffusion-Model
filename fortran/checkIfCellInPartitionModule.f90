@@ -14,30 +14,45 @@ module checkIfCellInPartitionModule
 
         implicit none
         private
-        LOGICAL :: cell_in_partition
+        public :: check_if_cell_in_partition
+contains
+        function check_if_cell_in_partition(arrayCellX,&
+                                           &arrayCellY,&
+                                           &arrayCellZ,&
+                                           &partitionXMin,&
+                                           &partitionXMax,&
+                                           &partitionYMin,&
+                                           &partitionYMax,&
+                                           &partitionZMin,&
+                                           &partitionZMax)&
+                                           & result (cell_in_partition)
+                implicit none
+                LOGICAL :: cell_in_partition
 
-        integer :: arrayCellX
-        integer :: arrayCellY
-        integer :: arrayCellZ
-        integer :: partitionXMin
-        integer :: partitionXMax
-        integer :: partitionYMin
-        integer :: partitionYMax
-        integer :: partitionZMin
-        integer :: partitionZMax
+                integer :: arrayCellX
+                integer :: arrayCellY
+                integer :: arrayCellZ
+                integer :: partitionXMin
+                integer :: partitionXMax
+                integer :: partitionYMin
+                integer :: partitionYMax
+                integer :: partitionZMin
+                integer :: partitionZMax
 
-        cell_in_partition = .FALSE.
-
-        ! Compare the array cell coordinates and partition cell coordinates to
-        ! determine whether the array cell exists within the partition
-        if (((arrayCellX >= partitionXMin) .and.&
-           &(arrayCellX < partitionXMax)) .and.&
-           &((arrayCellY >= partitionYMin) .and.&
-           &(arrayCellY < partitionYMax)) .and.&
-           &((arrayCellZ >= partitionZMin) .and.&
-           &(arrayCellZ < partitionZMax))) then
-                cell_in_partition = .TRUE.
-        else
                 cell_in_partition = .FALSE.
-        endif
 
+                ! Compare the array cell coordinates and partition cell
+                ! coordinates to determine whether the array cell exists within
+                ! the partition
+                if (((arrayCellX >= partitionXMin) .and.&
+                   &(arrayCellX < partitionXMax)) .and.&
+                   &((arrayCellY >= partitionYMin) .and.&
+                   &(arrayCellY < partitionYMax)) .and.&
+                   &((arrayCellZ >= partitionZMin) .and.&
+                   &(arrayCellZ < partitionZMax))) then
+                        cell_in_partition = .TRUE.
+                else
+                        cell_in_partition = .FALSE.
+                endif
+        end function 
+end module
