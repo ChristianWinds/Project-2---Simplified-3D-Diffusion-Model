@@ -114,7 +114,7 @@ do while (ratio < 0.99)
 &partitionZMax) 
                 endif
 
-                if (.not.(cell_in_partition))
+                if (.not.(cell_in_partition)) then
                         maxValue = maxval(cube)
                         minValue = minval(cube)
                         sumVal = sumVal + cube(i, j, k)
