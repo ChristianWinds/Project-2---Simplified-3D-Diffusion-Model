@@ -73,6 +73,7 @@ time = 0.0
 ratio = 0.0
 
 do while (ratio < 0.99)
+    ! Iterate through the cube's cells to diffuse the gas through the room
     do i = 1, maxSize, 1
         do j = 1, maxSize, 1
             do k = 1, maxSize, 1
