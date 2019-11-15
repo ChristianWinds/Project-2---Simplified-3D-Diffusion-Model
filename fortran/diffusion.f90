@@ -62,7 +62,7 @@ timestep = (roomDimension / speedOfGasMolecules) / maxSize
 distanceBetweenBlocks = roomDimension / maxSize
 
 DTerm = diffusionCoefficient * timestep / (distanceBetweenBlocks *&
-        &distanceBetweenBlocks)
+&distanceBetweenBlocks)
 
 ! Initialize the first cell
 cube(1, 1, 1) = 1.0e21
