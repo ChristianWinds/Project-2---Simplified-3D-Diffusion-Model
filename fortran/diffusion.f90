@@ -84,6 +84,19 @@ do while (ratio < 0.99)
                                &((i == l) .and. (j == m - 1) .and. (k == n)) .or.&
                                &((i == l + 1) .and. (j == m) .and. (k == n)) .or.&
                                &((i == l - 1) .and. (j == m) .and. (k == n))) then
+                                ! If the partition is active, determine whether
+                                ! either current array cell is in the partition
+                                ! to prevent gas from moving into the partition
+                                cell_in_partition = .FALSE.
+
+                                if (partitionFlag) then
+                                      cell_in_partition =&
+&(check_if_cell_in_partition(i, j, k, partitionXMin, partitionXMax,&
+&partitionYMin, partitionYMax, partitionZMin, partitionZMax)) .or.&
+&(check_if_cell_in_partition(l, m, n, partitionXMin, partitionXMax,&
+&partitionYMin, partitionYMax, partitionZMin, partitionZMax))
+                                endif
+
                                 change = (cube(i, j, k) - cube(l, m, n)) * DTerm
                                 cube(i, j, k) = cube(i, j, k) - change
                                 cube(l, m, n) = cube(l, m, n) + change
