@@ -100,6 +100,8 @@ func main() {
 	// https://yourbasic.org/golang/do-while-loop/
 	// Accessed Thursday, November 7th, 2019
 	for {
+		// Iterate through the cube's cells to diffuse the gas through
+		// the room
 		for i := 0; i < int(maxSize); i++ {
 			for j := 0; j < int(maxSize); j++ {
 				for k := 0; k < int(maxSize); k++ {
@@ -112,6 +114,11 @@ func main() {
 								   ((i == l) && (j == m - 1) && (k == n)) ||
 								   ((i == l + 1) && (j == m) && (k == n)) ||
 								   ((i == l - 1) && (j == m) && (k == n))) {
+									// If the partition is active,
+									// determine whether either current
+									// slice cell is in the partition to
+									// prevent gas from moving into the
+									// partition
 									var cellInPartition bool = false
 
 									if (partitionFlag) {
@@ -182,7 +189,7 @@ func checkIfCellInPartition (sliceCellX,
 			     partitionYMax,
 			     partitionZMin,
 			     partitionZMax int) bool {
-	// Precondition: All coordinates received by this method are valid
+	// Precondition: All coordinates received by this function are valid
 	// three-dimensional coordinates, and the received cell coordinates are
 	// valid three-dimensional slice cell coordinates. Each X, Y, and Z
 	// "Min" partition variable value is also less than or equal to the
@@ -193,6 +200,8 @@ func checkIfCellInPartition (sliceCellX,
 
 	var cellInPartition bool = false
 
+	// Compare the slice cell coordinates and partition cell coordinates to
+	// determine whether the slice cell exists within the partition
 	if (((sliceCellX >= partitionXMin) && (sliceCellX < partitionXMax)) &&
 	    ((sliceCellY >= partitionYMin) && (sliceCellY < partitionYMax)) &&
 	    ((sliceCellZ >= partitionZMin) && (sliceCellZ < partitionZMax))) {
