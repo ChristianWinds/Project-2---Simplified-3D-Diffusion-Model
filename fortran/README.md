@@ -1,4 +1,8 @@
-Fortran compilation instructions: Compile diffusion.f90 by using the gfortran
-compiler upon diffusion.f90.
-Fortran execution instructions: In the command line, enter the name of the
-executable file created from applying gfortran to diffusion.f90.
+Fortran compilation instructions: With both checkIfCellInPartitionModule.f90 and
+diffusion.f90 in the same directory, enter the command "gfortran
+checkIfCellInPartitionModule.f90 diffusion.f90" to compile the source code
+necessary to run the diffusion.f90 program.
+Fortran execution instructions: With the files checkifcellinpartitionmodule.mod
+and a.out, each created from compilng checkIfCellInPartitionModule.f90 and
+diffusion.f90, in the current directory, enter a.out in the command line to run
+the diffusion.f90 program.
