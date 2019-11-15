@@ -12,7 +12,7 @@
 	Accessed Friday, November 8th, 2019
 =#
 
-function checkIfCellInPartition(arrayCellX, arrayCellY, arrayCellZ, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)
+function checkIfCellInPartition(arraycellx, arraycelly, arraycellz, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)
 	# Precondition: All coordinates received by this method are valid
 	# three-dimensional coordinates, and the received cell coordinates are
 	# valid three-dimensional array cell coordinates. Each X, Y, and Z "Min"
@@ -22,17 +22,17 @@ function checkIfCellInPartition(arrayCellX, arrayCellY, arrayCellZ, partitionXMi
 	# coordinates were in the specified partition area was returned to this
 	# function's caller.
 
-	cellInPartition = false::bool
+	cellinpartition = false::bool
 
-	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
-	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
-	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
-		cellInPartition = true
+	if (((arraycellx >= partitionxmin) && (arraycellx < partitionxmax)) &&
+	    ((arraycelly >= partitionymin) && (arraycelly < partitionymax)) &&
+	    ((arraycellz >= partitionzmin) && (arraycellz < partitionzmax)))
+		cellinpartition = true
 	else
-		cellInPartition = false
+		cellinpartition = false
 	end
 
-	return cellInPartition
+	return cellinpartition
 end
 
 partitionFlag = true::Bool
@@ -143,12 +143,12 @@ while true
 	for i = 1:maxsize
 		for j = 1:maxsize
 			for k = 1:maxsize
-				cellInPartition = false::Bool
+				cellinpartition = false::Bool
 				if (partitionFlag)
-					cellInPartition = checkIfCellInPartition(i, j, k, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)::Bool
+					cellinpartition = checkIfCellInPartition(i, j, k, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)::Bool
 				end
 
-				if (!(cellInPartition))
+				if (!(cellinpartition))
 					maxval = max(cube[i, j, k], maxval)::Float64
 					minval = min(cube[i, j, k], minval)::Float64
 					sumval = sumval + cube[i, j, k]::Float64
