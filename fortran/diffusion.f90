@@ -108,7 +108,7 @@ do while (ratio < 0.99)
                 cell_in_partition = .FALSE.
 
                 if (partitionFlag) then
-                        cell_in_partition = checkIfCellInPartition(i, j, k,&
+                        cell_in_partition = check_if_cell_in_partition(i, j, k,&
 &partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin,&
 &partitionZMax) 
                 endif
