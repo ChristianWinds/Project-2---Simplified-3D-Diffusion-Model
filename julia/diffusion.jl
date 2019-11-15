@@ -35,7 +35,7 @@ function checkIfCellInPartition(arraycellx, arraycelly, arraycellz, partitionxmi
 	return cellinpartition
 end
 
-partitionFlag = true::Bool
+partitionflag = true::Bool
 maxsize = 10::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
 
@@ -57,7 +57,7 @@ partitionymax = 0::Int64
 partitionzmin = 0::Int64
 partitionzmax = 0::Int64
 
-if (partitionFlag)
+if (partitionflag)
 	# Calculate the partition's X coordinates to place the partition at half
 	# the room's length
 	partitionxmin = maxsize / 2
@@ -128,13 +128,15 @@ while true
 								# partition
 								cellinpartition = false::Bool
 
-								if (partitionFlag)
+								if (partitionflag)
 									cellinpartition = (checkIfCellInPartition(i, j, k, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)) || (checkIfCellInPartition(l, m, n, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax))::Bool
 								end
 
-								change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
-								cube[i, j, k] = (cube[i, j, k] - change)::Float64
-								cube[l, m, n] = (cube[l, m, n] + change)::Float64
+								if (!(cellinpartition))
+									change = ((cube[i, j, k] -  cube[l, m, n]) * dterm)::Float64
+									cube[i, j, k] = (cube[i, j, k] - change)::Float64
+									cube[l, m, n] = (cube[l, m, n] + change)::Float64
+								end
 							end
 						end
 					end
@@ -159,7 +161,7 @@ while true
 				# avoid including the partition cells' gas
 				# amounts
 				cellinpartition = false::Bool
-				if (partitionFlag)
+				if (partitionflag)
 					cellinpartition = checkIfCellInPartition(i, j, k, partitionxmin, partitionxmax, partitionymin, partitionymax, partitionzmin, partitionzmax)::Bool
 				end
 
