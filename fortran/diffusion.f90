@@ -108,7 +108,11 @@ do while (ratio < 0.99)
                 cell_in_partition = .FALSE.
 
                 if (partitionFlag) then
+                        cell_in_partition = checkIfCellInPartition(p, q, r,&
+&partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMinInt,&
+&partitionZMax) 
                 endif
+
                 maxValue = maxval(cube)
                 minValue = minval(cube)
                 sumVal = sumVal + cube(i, j, k)
