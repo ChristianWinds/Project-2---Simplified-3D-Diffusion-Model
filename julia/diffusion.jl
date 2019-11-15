@@ -23,9 +23,9 @@ function checkIfCellInPartition(arraycellx,
 				partitionzmax)
 	# Precondition: All coordinates received by this method are valid
 	# three-dimensional coordinates, and the received cell coordinates are
-	# valid three-dimensional array cell coordinates. Each X, Y, and Z "Min"
+	# valid three-dimensional array cell coordinates. Each X, Y, and Z "min"
 	# partition variable value is also less than or equal to the respective
-	# X, Y, and Z "Max" variable value.
+	# X, Y, and Z "max" variable value.
 	# Postcondition: A Boolean of whether the received array cell
 	# coordinates were in the specified partition area was returned to this
 	# function's caller.
@@ -71,7 +71,7 @@ if (partitionflag)
 	partitionxmin = maxsize / 2
 	partitionxmax = partitionxmin + 1
 
-	# Calculate the partition's Y coordinates to place the  partition's
+	# Calculate the partition's Y coordinates to place the partition's
 	# width across the room
 	partitionymin = 0
 	partitionymax = maxsize
