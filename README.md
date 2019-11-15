@@ -55,9 +55,12 @@ to run with an active partition. The partition's height will be 75% of the
 room's total vertical division height, floored to the nearest room division
 integer less than or equal to the 75% height. When diffusion.jl is executable,
 enter "./diffusion.jl" to run diffusion.jl.
+Lisp compilation instructions: diffusion.lisp does not use a compilation
+command.
+Lisp execution instructions: If diffusion.lisp is not already executable, enter
+"chmod u+x diffusion.lisp" on the command line. When diffusion.lisp is
+executable, enter "./diffusion.lisp" to run diffusion.lisp.
 Python compilation instructions:
 Python execution instructions:
 R compilation instructions:
 R execution instructions:
-Lisp compilation instructions:
-Lisp execution instructions:
