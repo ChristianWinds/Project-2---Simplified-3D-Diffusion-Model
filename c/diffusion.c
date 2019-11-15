@@ -98,7 +98,7 @@ int main(int argc, char** argv)
 
 	// Code from Dr. Pounds,
 	// /tmp/diffusion.java
-	// Accessed 2019
+	// Accessed Wednesday, October 23rd, 2019
 
 	// Examine the command line arguments to determine the number of room
 	// divisions and whether to activate the partition
