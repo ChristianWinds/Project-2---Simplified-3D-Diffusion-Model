@@ -9,6 +9,7 @@
 ! Checked for mass consistency on 10/20/19 by Dr. Pounds
  
 program diffusion
+use checkIfCellInPartitionModule, only: check_if_cell_in_partition
 implicit none
 integer, parameter :: maxSize = 10
 integer :: partitionXMin, partitionXMax, partitionYMin, partitionYMax,&
