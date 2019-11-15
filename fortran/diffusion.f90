@@ -15,9 +15,10 @@ integer, parameter :: maxSize = 10
 integer :: partitionXMin, partitionXMax, partitionYMin, partitionYMax,&
 &partitionZMin, partitionZMax
 integer :: i, j, k, l, m, n
-real :: diffusionCoefficient, roomDimension, speedOfGasMolecules, timestep,&
-&distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue, minValue
-real, DIMENSION(maxSize, maxSize, maxSize) :: cube
+double precision :: diffusionCoefficient, roomDimension, speedOfGasMolecules,&
+&timestep, distanceBetweenBlocks, dTerm, time, ratio, change, sumVal, maxValue,&
+&minValue
+double precision, DIMENSION(maxSize, maxSize, maxSize) :: cube
 LOGICAL :: partitionFlag = .FALSE.
 LOGICAL :: cell_in_partition = .FALSE.
 
