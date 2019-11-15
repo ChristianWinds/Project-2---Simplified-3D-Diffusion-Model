@@ -12,6 +12,29 @@
 	Accessed Friday, November 8th, 2019
 =#
 
+function checkIfCellInPartition(arrayCellX, arrayCellY, arrayCellZ, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)
+	# Precondition: All coordinates received by this method are valid
+	# three-dimensional coordinates, and the received cell coordinates are
+	# valid three-dimensional array cell coordinates. Each X, Y, and Z "Min"
+	# partition variable value is also less than or equal to the respective
+	# X, Y, and Z "Max" variable value.
+	# Postcondition: A Boolean of whether the received array cell
+	# coordinates were in the specified partition area was returned to this
+	# function's caller.
+
+	cellInPartition = false::bool
+
+	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
+	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
+	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
+		cellInPartition = true
+	else
+		cellInPartition = false
+	end
+
+	return cellInPartition
+end
+
 partitionFlag = true::Bool
 maxsize = 10::Int64
 cube = Array{Float64}(undef, maxsize, maxsize, maxsize)
@@ -143,26 +166,3 @@ while true
 	end
 end
 println("Box equilibrated in ", timeamount, " seconds of simulated time.")
-
-function checkIfCellInPartition(arrayCellX, arrayCellY, arrayCellZ, partitionXMin, partitionXMax, partitionYMin, partitionYMax, partitionZMin, partitionZMax)
-	# Precondition: All coordinates received by this method are valid
-	# three-dimensional coordinates, and the received cell coordinates are
-	# valid three-dimensional array cell coordinates. Each X, Y, and Z "Min"
-	# partition variable value is also less than or equal to the respective
-	# X, Y, and Z "Max" variable value.
-	# Postcondition: A Boolean of whether the received array cell
-	# coordinates were in the specified partition area was returned to this
-	# function's caller.
-
-	cellInPartition = false::bool
-
-	if (((arrayCellX >= partitionXMin) && (arrayCellX < partitionXMax)) &&
-	    ((arrayCellY >= partitionYMin) && (arrayCellY < partitionYMax)) &&
-	    ((arrayCellZ >= partitionZMin) && (arrayCellZ < partitionZMax)))
-		cellInPartition = true
-	else
-		cellInPartition = false
-	end
-
-	return cellInPartition
-end
