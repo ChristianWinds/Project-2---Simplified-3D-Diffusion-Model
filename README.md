@@ -72,5 +72,11 @@ partitionFlag variable to True to run diffusion.py with a partition. The
 partition's height will be 75% of the room's vertical divisions' total height,
 floored to the nearest room division integer less than or equal to the 75%
 height. Enter "python diffusion.py" in the command line to run diffusion.py.
-R compilation instructions:
-R execution instructions:
+R compilation instructions: diffusion.r does not require a compilation command.
+R execution instructions: Before running diffusion.r, change the maxSize
+variable in the diffusion.r source code to change the number of room divisions
+to be used in the diffusion.r execution. If diffusion.r is not yet executable,
+enter "chmod u+x diffusion.r" on the command line. When diffusion.r is
+executable, enter "./diffusion.r" to run diffusion.r. The diffusion.r program
+will not correctly complete a diffusion simulation, however, as the diffusion.r
+algorithm is incomplete.
