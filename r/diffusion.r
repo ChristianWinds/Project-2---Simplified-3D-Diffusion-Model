@@ -34,7 +34,6 @@ DTerm = diffusion_coefficient * timestep / (distance_between_blocks * distance_b
 
 # Initialize the first cell
 cube[0, 0, 0] <- 1.0e21;
-cat ("TEST (Post-cube first cell initialization): cube[0, 0, 0] ==", cube[0, 0, 0], "\n")
 
 pass = 0
 
@@ -43,14 +42,6 @@ time = 0.0
 
 ratio = 0.0
 
-# Code from Stack Overflow,
-# https://stackoverflow.com/questions/4357827/do-while-loop-in-r
-# Accessed Saturday, November 9th, 2019
-# and from YourBasic,
-# https://yourbasic.org/golang/do-while-loop/
-# Accessed Saturday, November 9th, 2019
-repeat
-{
 	for (i in 1:maxsize)
 	{
 		for (j in 1:maxsize)
@@ -96,11 +87,8 @@ repeat
 				# Create a vector for the max function to
 				# determine the higher read value
 				maxfunctionvector <-c(cube[i, j, k], maxval)
-				cat ("TEST (Third nested for loop set): cube[", i, ",", j, ",", k, "] ==", cube[i, j, k], "\n")
-				cat ("TEST (Third nested for loop set, post-maxfunctionvector creation): maxval ==", maxval, "\n")
 
 				maxval = max(maxfunctionvector)
-				cat ("TEST (Third nested for loop set, post-maxval update):", maxval, "\n")
 
 				# Create a vector for the min function to
 				# determine the lower read value
@@ -115,14 +103,6 @@ repeat
 
 	ratio = minval / maxval
 
-	cat ("TEST (Post-ratio recalculation): maxval ==", maxval, "\n")
-
 	cat (time, ratio, sumval, "\n")
-
-	if (!(ratio < 0.99))
-	{
-		break
-	}
-}
 
 cat ("Box equilibrated in", time, "seconds of simulated time.\n")
