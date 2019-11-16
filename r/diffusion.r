@@ -9,7 +9,12 @@
 # Accessed Saturday, November 9th, 2019
 
 maxsize = 10
-cube <- array(0, dim = c(maxsize,maxsize,maxsize))
+
+# Code from Stack Overflow,
+# https://stackoverflow.com/questions/10961141/setting-up-a-3d-matrix-in-r-and-accessing-certain-elements
+# Accessed Friday, November 15th, 2019
+someData <- rep(0, maxsize*maxsize*maxsize)
+cube <- array(someData, dim = c(maxsize,maxsize,maxsize))
 
 diffusion_coefficient = 0.175
 
